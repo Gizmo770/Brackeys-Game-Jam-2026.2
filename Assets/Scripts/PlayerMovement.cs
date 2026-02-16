@@ -53,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
     private void Thrust()
     {
         // Forward movement
-        if(playerInput.y > 0 || Input.GetKey(KeyCode.Space))
+        if(playerInput.y > 0)
         {
             if (rb.linearVelocity.magnitude < currentMaxSpeed)
             {

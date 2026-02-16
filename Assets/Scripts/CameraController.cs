@@ -26,14 +26,21 @@ public class CameraController : MonoBehaviour
 
     void LateUpdate()
     {
+        float currentPlayerSpeed = playerMovement.GetComponent<Rigidbody2D>().linearVelocity.magnitude;
+
         // Camera follow with look-ahead
         Vector3 targetPosition = target.position + (target.up * lookAheadDistance);
         targetPosition.z = -10;
         transform.position = targetPosition;
 
         // Speed-based zoom
-        float currentSpeed = playerMovement.GetComponent<Rigidbody2D>().linearVelocity.magnitude;
+        float currentSpeed = currentPlayerSpeed;
         float speedPercent = Mathf.Clamp01(currentSpeed / playerMovement.currentMaxSpeed);
         cam.orthographicSize = Mathf.Lerp(normalZoom, maxZoomOut, speedPercent);
+
+        if (Mathf.Abs(cam.orthographicSize - normalZoom) < 0.1f)
+        {
+            cam.orthographicSize = normalZoom;
+        }
     }
 }
