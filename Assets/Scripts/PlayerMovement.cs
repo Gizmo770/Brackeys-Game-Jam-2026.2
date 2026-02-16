@@ -8,8 +8,6 @@ public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
     private Vector2 playerInput;
-    
-    [HideInInspector] public bool isPlayerMoving;
 
     [Header("Engine")]
     public float currentMaxSpeed;
@@ -20,24 +18,16 @@ public class PlayerMovement : MonoBehaviour
     [Header("Fins")]
     public float turnSpeed;
     public float maxTurnSpeed;
-    public float maneuverability = 5f;
+
+    [Header("Engine")]
+    public float currentFuel = 0f;
+    public float maxFuel = 100f;
+    public float fuelConsumptionRate = 10f;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-    }
-
-    private void Update()
-    {
-        if (rb.linearVelocity.magnitude > 0.1f)
-        {
-            isPlayerMoving = true;
-        }
-        else
-        {
-            isPlayerMoving = false;
-        }
     }
 
     private void FixedUpdate()
@@ -47,18 +37,15 @@ public class PlayerMovement : MonoBehaviour
 
         Thrust();
         Rotation();
-        ApplyManeuverability();
     }
 
     private void Thrust()
     {
         // Forward movement
-        if(playerInput.y > 0)
+        if(playerInput.y > 0 && currentFuel >= 0f)
         {
-            if (rb.linearVelocity.magnitude < currentMaxSpeed)
-            {
-                rb.AddForce(rb.transform.up * acceleration, ForceMode2D.Force);
-            }
+            rb.AddForce(rb.transform.up * acceleration, ForceMode2D.Force);
+            DrainFuel();
         }
 
         // Deceleration no reverse
@@ -76,6 +63,11 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.linearVelocity = rb.linearVelocity.normalized * currentMaxSpeed;
         }
+    }
+
+    private void DrainFuel()
+    {
+        currentFuel -= fuelConsumptionRate * Time.fixedDeltaTime;
     }
 
     private void Rotation()
@@ -96,13 +88,4 @@ public class PlayerMovement : MonoBehaviour
             rb.angularVelocity = 0;
         }
     }
-
-    // Adds a force opposite to the lateral velocity to simulate grip and prevent sliding
-    private void ApplyManeuverability()
-    {
-        float lateralSpeed = Vector2.Dot(rb.linearVelocity, rb.transform.right);
-        Vector2 gripForce = -rb.transform.right * lateralSpeed * maneuverability;
-        rb.AddForce(gripForce, ForceMode2D.Force);
-    }
-
 }
