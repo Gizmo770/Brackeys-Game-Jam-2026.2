@@ -6,13 +6,15 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
+    private GameManager gameManager;
+
     private Rigidbody2D rb;
     private Vector2 playerInput;
     private bool launchStarted = false;
     public bool canMove = false;
 
     [Header("Engine")]
-    public float currentMaxSpeed;
+    public float currentSpeed;
     public float topSpeed;
     public float acceleration;
     public float decceleration;
@@ -32,6 +34,8 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         canMove = false;
         launchStarted = false;
+
+        ApplyCurrentUpgradeStats();
     }
 
     private void FixedUpdate()
@@ -69,9 +73,9 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // Speed limiter
-        if (rb.linearVelocity.magnitude > currentMaxSpeed)
+        if (rb.linearVelocity.magnitude > currentSpeed)
         {
-            rb.linearVelocity = rb.linearVelocity.normalized * currentMaxSpeed;
+            rb.linearVelocity = rb.linearVelocity.normalized * currentSpeed;
         }
     }
 
@@ -97,6 +101,24 @@ public class PlayerMovement : MonoBehaviour
     private void DrainFuel()
     {
         currentFuel -= fuelConsumptionRate * Time.fixedDeltaTime;
+    }
+
+    private void ApplyCurrentUpgradeStats()
+    {
+        // Engine
+        maxFuel = gameManager.appliedMaxFuel;
+        topSpeed = gameManager.appliedTopSpeed;
+        currentFuel = maxFuel;
+
+        // Fins
+        maxTurnSpeed = gameManager.appliedMaxTurnSpeed;
+        turnSpeed = maxTurnSpeed;
+
+        // Hull
+        // TODO: Need to apply health and speed loss multipliers
+
+        // Defense
+        // TODO: Need to apply defense system countermeasures where necessary
     }
 
     public IEnumerator Launch(float launchAngle, float launchSpeed, float timeBeforeLaunch)

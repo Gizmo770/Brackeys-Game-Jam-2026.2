@@ -35,7 +35,7 @@ public class CameraController : MonoBehaviour
 
         // Speed-based zoom
         float currentSpeed = currentPlayerSpeed;
-        float speedPercent = Mathf.Clamp01(currentSpeed / playerMovement.currentMaxSpeed);
+        float speedPercent = Mathf.Clamp01(currentSpeed / playerMovement.currentSpeed);
         cam.orthographicSize = Mathf.Lerp(normalZoom, maxZoomOut, speedPercent);
 
         if (Mathf.Abs(cam.orthographicSize - normalZoom) < 0.1f)
