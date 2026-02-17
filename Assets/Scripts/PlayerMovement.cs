@@ -8,6 +8,8 @@ public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
     private Vector2 playerInput;
+    private bool launchStarted = false;
+    public bool canMove = false;
 
     [Header("Engine")]
     public float currentMaxSpeed;
@@ -28,16 +30,23 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        canMove = false;
+        launchStarted = false;
     }
 
     private void FixedUpdate()
     {
         // Get Input
         playerInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+
+        // TODO: Remove debug.
         currentFuel = maxFuel;
 
-        Thrust();
-        Rotation();
+        if(canMove)
+        {
+            Thrust();
+            Rotation();
+        }
     }
 
     private void Thrust()
@@ -66,11 +75,6 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void DrainFuel()
-    {
-        currentFuel -= fuelConsumptionRate * Time.fixedDeltaTime;
-    }
-
     private void Rotation()
     {
         rb.AddTorque(-playerInput.x * turnSpeed);
@@ -87,6 +91,23 @@ public class PlayerMovement : MonoBehaviour
         if (playerInput.x == 0)
         {
             rb.angularVelocity = 0;
+        }
+    }
+
+    private void DrainFuel()
+    {
+        currentFuel -= fuelConsumptionRate * Time.fixedDeltaTime;
+    }
+
+    public IEnumerator Launch(float launchAngle, float launchSpeed, float timeBeforeLaunch)
+    {
+        if(!launchStarted)
+        {
+            launchStarted = true;
+            rb.rotation = launchAngle;
+            yield return new WaitForSeconds(timeBeforeLaunch);
+            rb.AddForce(rb.transform.up * launchSpeed, ForceMode2D.Impulse);
+            canMove = true;
         }
     }
 }
