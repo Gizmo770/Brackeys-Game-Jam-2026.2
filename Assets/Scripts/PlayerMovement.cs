@@ -34,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
     {
         // Get Input
         playerInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        currentFuel = maxFuel;
 
         Thrust();
         Rotation();
