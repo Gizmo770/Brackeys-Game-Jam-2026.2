@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    private PlayerMovement playerMovement;
+
     public static GameManager Instance { get; private set; }
     public int money = 400;
 
@@ -28,6 +30,11 @@ public class GameManager : MonoBehaviour
     public float appliedSpeedLossMultiplier;
     public GameObject appliedDefensePrefab;
 
+    [Header("Last Run Tracker Stats")]
+    public float distanceToNextBiome;
+    public float verticalDistanceTraveled;
+    public int obstaclesDestroyed;
+
     private void Awake()
     {
         if (Instance != null && Instance != this) { Destroy(gameObject); return; }
@@ -35,6 +42,24 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         EnsureBaseOwned();
+    }
+
+    public void Update()
+    {
+        if (playerMovement == null)
+        {
+            playerMovement = Object.FindFirstObjectByType<PlayerMovement>();
+        }
+
+        // Player loss condition
+        if(playerMovement != null)
+        {
+            if(playerMovement.currentFuel <= 0 && playerMovement.currentSpeed <= 0)
+            {
+                CalculateLastRunStats();
+                FindFirstObjectByType<SceneTransition>().TriggerSceneChange("ShopScene");
+            }
+        }
     }
 
     private void EnsureBaseOwned()
@@ -116,5 +141,22 @@ public class GameManager : MonoBehaviour
 
         DefenseUpgrade defense = shop.defenseUpgrades[equippedDefenseIndex];
         appliedDefensePrefab = defense.countermeasurePrefab;
+    }
+
+    private void CalculateLastRunStats()
+    {
+
+        // TODO: Do calculations for distance to next biome.
+
+        // Calculate the vertical distance from the launchpad to the player
+        Transform launchPad = Object.FindFirstObjectByType<Launchpad>().transform;
+        verticalDistanceTraveled = playerMovement.transform.position.y - launchPad.position.y;
+
+        // TODO: Do calculations for obstacles destroyed.
+    }
+
+    public void GoToRocketScene()
+    {
+       FindFirstObjectByType<SceneTransition>().TriggerSceneChange("RocketScene");
     }
 }

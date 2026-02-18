@@ -43,9 +43,6 @@ public class PlayerMovement : MonoBehaviour
         // Get Input
         playerInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 
-        // TODO: Remove debug.
-        currentFuel = maxFuel;
-
         if(canMove)
         {
             Thrust();
