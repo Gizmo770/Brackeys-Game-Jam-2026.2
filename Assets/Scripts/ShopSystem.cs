@@ -5,6 +5,8 @@ public class ShopSystem : MonoBehaviour
 {
     private GameManager gameManager;
 
+    public TextMeshProUGUI moneyText;
+
     //Used to hold list of available upgrades for the shop.
     public EngineUpgrade[] engineUpgrades;
     public FinUpgrade[] finUpgrades;
@@ -20,12 +22,18 @@ public class ShopSystem : MonoBehaviour
     {
         // Updates Shop UI for last run stats.
         gameManager = Object.FindAnyObjectByType<GameManager>();
+        UpdateMoneyText();
         distanceToNextText.text 
             = "Distance to Next Area: " + gameManager.distanceToNextBiome.ToString();
         verticalDistanceText.text 
             = "Vertical Travelled: " + gameManager.verticalDistanceTraveled.ToString();
         obstaclesDestroyedText.text
             = "Obstacles Destroyed: " + gameManager.obstaclesDestroyed.ToString();
+    }
+
+    public void UpdateMoneyText()
+    {
+        moneyText.text = "Credits Available: " + gameManager.money.ToString();
     }
 }
 

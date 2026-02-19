@@ -63,6 +63,7 @@ public class UpgradeSystem : MonoBehaviour
             gameManager.money -= upgradeCost;
             gameManager.AddOwned(upgradeType, currentIndex);
             gameManager.EquipUpgrade(upgradeType, currentIndex);
+            shopSystem.UpdateMoneyText();
             RefreshUI();
         }
     }
