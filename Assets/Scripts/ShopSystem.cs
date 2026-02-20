@@ -7,12 +7,6 @@ public class ShopSystem : MonoBehaviour
 
     public TextMeshProUGUI moneyText;
 
-    //Used to hold list of available upgrades for the shop.
-    public EngineUpgrade[] engineUpgrades;
-    public FinUpgrade[] finUpgrades;
-    public HullUpgrade[] hullUpgrades;
-    public DefenseUpgrade[] defenseUpgrades;
-
     [Header("UI Last Run Text Elements")]
     public TextMeshProUGUI distanceToNextText;
     public TextMeshProUGUI verticalDistanceText;
@@ -37,49 +31,55 @@ public class ShopSystem : MonoBehaviour
     }
 }
 
+
+[CreateAssetMenu(fileName = "Items", menuName = "Data/Items", order = 1)]
+public class Items : ScriptableObject
+{
+    public EngineUpgrade[] engineUpgrades;
+    public FinUpgrade[] finUpgrades;
+    public HullUpgrade[] hullUpgrades;
+    public DefenseUpgrade[] defenseUpgrades;
+}
+
 // For reference...
 // Engine = Max Fuel/Top Speed
 // Fins = Max Turn Speed
 // Hull = Health/Speed Loss from Obstacles
 // Defense System = Other Countermeasures
-[System.Serializable]
-public class EngineUpgrade
+[CreateAssetMenu(fileName = "EngineUpgrade", menuName = "ShipParts/Engine", order = 1)]
+public class EngineUpgrade : ScriptableObject
 {
-    public string name;
+    public string partName;
     public string description;
     public float maxFuel;
     public float topSpeed;
     public int cost;
-    public bool isBase;
 }
 
-[System.Serializable]
-public class FinUpgrade
+[CreateAssetMenu(fileName = "FinUpgrade", menuName = "ShipParts/Fin", order = 1)]
+public class FinUpgrade : ScriptableObject
 {
-    public string name;
+    public string partName;
     public string description;
     public float maxTurnSpeed;
     public int cost;
-    public bool isBase;
 }
 
-[System.Serializable]
-public class HullUpgrade
+[CreateAssetMenu(fileName = "HullUpgrade", menuName = "ShipParts/Hull", order = 1)]
+public class HullUpgrade : ScriptableObject
 {
-    public string name;
+    public string partName;
     public string description;
     public float health;
     public float speedLossMultiplier;
     public int cost;
-    public bool isBase;
 }
 
-[System.Serializable]
-public class DefenseUpgrade
+[CreateAssetMenu(fileName = "DefenseUpgrade", menuName = "ShipParts/Defense", order = 1)]
+public class DefenseUpgrade : ScriptableObject
 {
-    public string name;
+    public string partName;
     public string description;
     public GameObject countermeasurePrefab;
     public int cost;
-    public bool isBase;
 }

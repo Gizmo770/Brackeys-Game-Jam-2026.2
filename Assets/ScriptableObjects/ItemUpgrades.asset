@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: ItemUpgrades
+  m_EditorClassIdentifier: Assembly-CSharp::Items
+  engineUpgrades:
+  - {fileID: 11400000, guid: c732ab8f27c6d7c48982d2ce0b8c7af5, type: 2}
+  finUpgrades:
+  - {fileID: 11400000, guid: b4dae75b777929f48bbeb08c3209b61f, type: 2}
+  hullUpgrades:
+  - {fileID: 11400000, guid: 14b7e986b5cbfca4aaed849cf2bb5808, type: 2}
+  defenseUpgrades:
+  - {fileID: 11400000, guid: d5608d1ddeb38b94ebd0302503d3f8ef, type: 2}

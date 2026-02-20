@@ -72,10 +72,10 @@ public class UpgradeSystem : MonoBehaviour
     {
         switch (upgradeType)
         {
-            case UpgradeType.Engine: return shopSystem.engineUpgrades[currentIndex].cost;
-            case UpgradeType.Fin: return shopSystem.finUpgrades[currentIndex].cost;
-            case UpgradeType.Hull: return shopSystem.hullUpgrades[currentIndex].cost;
-            case UpgradeType.Defense: return shopSystem.defenseUpgrades[currentIndex].cost;
+            case UpgradeType.Engine: return GameManager.Instance.items.engineUpgrades[currentIndex].cost;
+            case UpgradeType.Fin: return GameManager.Instance.items.finUpgrades[currentIndex].cost;
+            case UpgradeType.Hull: return GameManager.Instance.items.hullUpgrades[currentIndex].cost;
+            case UpgradeType.Defense: return GameManager.Instance.items.defenseUpgrades[currentIndex].cost;
             default: return int.MaxValue;
         }
     }
@@ -85,16 +85,16 @@ public class UpgradeSystem : MonoBehaviour
         switch (upgradeType)
         {
             case UpgradeType.Engine:
-                return shopSystem.engineUpgrades.Length;
+                return GameManager.Instance.items.engineUpgrades.Length;
 
             case UpgradeType.Fin:
-                return shopSystem.finUpgrades.Length;
+                return GameManager.Instance.items.finUpgrades.Length;
 
             case UpgradeType.Hull:
-                return shopSystem.hullUpgrades.Length;
+                return GameManager.Instance.items.hullUpgrades.Length;
 
             case UpgradeType.Defense:
-                return shopSystem.defenseUpgrades.Length;
+                return GameManager.Instance.items.defenseUpgrades.Length;
 
             default:
                 return 0;
@@ -106,19 +106,19 @@ public class UpgradeSystem : MonoBehaviour
         switch (upgradeType)
         {
             case UpgradeType.Engine:
-                upgradeNameText.text = shopSystem.engineUpgrades[currentIndex].name;
+                upgradeNameText.text = GameManager.Instance.items.engineUpgrades[currentIndex].name;
                 break;
 
             case UpgradeType.Fin:
-                upgradeNameText.text = shopSystem.finUpgrades[currentIndex].name;
+                upgradeNameText.text = GameManager.Instance.items.finUpgrades[currentIndex].name;
                 break;
 
             case UpgradeType.Hull:
-                upgradeNameText.text = shopSystem.hullUpgrades[currentIndex].name;
+                upgradeNameText.text = GameManager.Instance.items.hullUpgrades[currentIndex].name;
                 break;
 
             case UpgradeType.Defense:
-                upgradeNameText.text = shopSystem.defenseUpgrades[currentIndex].name;
+                upgradeNameText.text = GameManager.Instance.items.defenseUpgrades[currentIndex].name;
                 break;
         }
 

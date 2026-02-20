@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private GameManager gameManager;
+    public static ShipStats ShipStats;
 
     private Rigidbody2D rb;
     private Vector2 playerInput;
@@ -31,11 +31,13 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GameManager.Instance.EnsureBaseOwned();
+
         rb = GetComponent<Rigidbody2D>();
         canMove = false;
         launchStarted = false;
 
-        ApplyCurrentUpgradeStats();
+        RecalculateAppliedStats();
     }
 
     private void FixedUpdate()
@@ -43,11 +45,28 @@ public class PlayerMovement : MonoBehaviour
         // Get Input
         playerInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 
-        if(canMove)
+        if (canMove)
         {
             Thrust();
             Rotation();
         }
+    }
+
+    private void RecalculateAppliedStats()
+    {
+        EngineUpgrade engine = ShipStats.engineUpgrade;
+        maxFuel = engine.maxFuel;
+        topSpeed = engine.topSpeed;
+
+        FinUpgrade fins = ShipStats.finUpgrade;
+        maxTurnSpeed = fins.maxTurnSpeed;
+
+        HullUpgrade hull = ShipStats.hullUpgrade;
+        //appliedHealth = hull.health;
+        //appliedSpeedLossMultiplier = hull.speedLossMultiplier;
+
+        DefenseUpgrade defense = ShipStats.defenseUpgrade;
+        //appliedDefensePrefab = defense.countermeasurePrefab;
     }
 
     private void Thrust()
@@ -70,9 +89,9 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // Speed limiter
-        if (rb.linearVelocity.magnitude > currentSpeed)
+        if (rb.linearVelocity.magnitude > topSpeed)
         {
-            rb.linearVelocity = rb.linearVelocity.normalized * currentSpeed;
+            rb.linearVelocity = rb.linearVelocity.normalized * topSpeed;
         }
     }
 
@@ -98,24 +117,6 @@ public class PlayerMovement : MonoBehaviour
     private void DrainFuel()
     {
         currentFuel -= fuelConsumptionRate * Time.fixedDeltaTime;
-    }
-
-    private void ApplyCurrentUpgradeStats()
-    {
-        // Engine
-        maxFuel = gameManager.appliedMaxFuel;
-        topSpeed = gameManager.appliedTopSpeed;
-        currentFuel = maxFuel;
-
-        // Fins
-        maxTurnSpeed = gameManager.appliedMaxTurnSpeed;
-        turnSpeed = maxTurnSpeed;
-
-        // Hull
-        // TODO: Need to apply health and speed loss multipliers
-
-        // Defense
-        // TODO: Need to apply defense system countermeasures where necessary
     }
 
     public IEnumerator Launch(float launchAngle, float launchSpeed, float timeBeforeLaunch)

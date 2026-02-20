@@ -445,68 +445,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &89371254
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 89371255}
-  - component: {fileID: 89371256}
-  m_Layer: 0
-  m_Name: GameManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &89371255
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 89371254}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &89371256
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 89371254}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f9d5a553e285c24fbe009938c6f545d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  money: 500
-  ownedEngineUpgrades: 
-  ownedFinUpgrades: 
-  ownedHullUpgrades: 
-  ownedDefenseUpgrades: 
-  equippedEngineIndex: 0
-  equippedFinIndex: 0
-  equippedHullIndex: 0
-  equippedDefenseIndex: 0
-  appliedHealth: 0
-  appliedMaxFuel: 0
-  appliedTopSpeed: 0
-  appliedMaxTurnSpeed: 0
-  appliedSpeedLossMultiplier: 0
-  appliedDefensePrefab: {fileID: 0}
-  distanceToNextBiome: 0
-  verticalDistanceTraveled: 0
-  obstaclesDestroyed: 0
 --- !u!1 &117768147
 GameObject:
   m_ObjectHideFlags: 0
@@ -2847,54 +2785,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   moneyText: {fileID: 138805336}
-  engineUpgrades:
-  - name: Base
-    description: Base Engine
-    maxFuel: 100
-    topSpeed: 75
-    cost: 0
-    isBase: 1
-  - name: Engine2
-    description: Engine2
-    maxFuel: 125
-    topSpeed: 100
-    cost: 100
-    isBase: 0
-  finUpgrades:
-  - name: Base
-    description: Base Fins
-    maxTurnSpeed: 50
-    cost: 0
-    isBase: 1
-  - name: Fin2
-    description: Fin2
-    maxTurnSpeed: 65
-    cost: 100
-    isBase: 0
-  hullUpgrades:
-  - name: Base
-    description: Base Hull
-    health: 100
-    speedLossMultiplier: 1
-    cost: 0
-    isBase: 1
-  - name: Hull2
-    description: Hull2
-    health: 120
-    speedLossMultiplier: 0.9
-    cost: 100
-    isBase: 0
-  defenseUpgrades:
-  - name: Base
-    description: Base Defense
-    countermeasurePrefab: {fileID: 0}
-    cost: 0
-    isBase: 1
-  - name: Basic Shield
-    description: Regenerative shield that prevents speed loss and hull damage.
-    countermeasurePrefab: {fileID: 0}
-    cost: 100
-    isBase: 0
   distanceToNextText: {fileID: 256200879}
   verticalDistanceText: {fileID: 1661357100}
   obstaclesDestroyedText: {fileID: 1123909280}
@@ -5432,7 +5322,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 89371256}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: GoToRocketScene
         m_Mode: 1
@@ -6910,4 +6800,3 @@ SceneRoots:
   - {fileID: 519420032}
   - {fileID: 711144400}
   - {fileID: 1460180819}
-  - {fileID: 89371255}
