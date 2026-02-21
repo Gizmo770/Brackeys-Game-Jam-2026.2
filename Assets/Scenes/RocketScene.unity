@@ -1096,8 +1096,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d7323877a5703c4e93b4dc1124c1c18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
+  rb: {fileID: 0}
   canMove: 0
-  currentSpeed: 0
   topSpeed: 75
   acceleration: 12
   decceleration: 2
@@ -1106,6 +1106,11 @@ MonoBehaviour:
   currentFuel: 100
   maxFuel: 100
   fuelConsumptionRate: 10
+  hullSprite: {fileID: 176079803}
+  thrusterSprite: {fileID: 810839367}
+  fin1Sprite: {fileID: 205467930}
+  fin2Sprite: {fileID: 1725751197}
+  defenseSprite: {fileID: 846370838}
 --- !u!50 &749293201
 Rigidbody2D:
   serializedVersion: 5
@@ -1342,7 +1347,7 @@ GameObject:
   - component: {fileID: 846370837}
   - component: {fileID: 846370838}
   m_Layer: 0
-  m_Name: Defence
+  m_Name: Defense
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
