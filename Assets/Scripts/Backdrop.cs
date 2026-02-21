@@ -3,8 +3,12 @@ using UnityEngine;
 
 public class Backdrop : MonoBehaviour
 {
+    public float planetXOffset;
+    public float planetTravelDistance;
+    public float planetXTravelDistance;
     public List<Color> tintColors;
     public List<Sprite> cloudSprites;
+    public List<Sprite> planetSprites;
 
     public GameObject player;
     public ProgressTracker progressTracker;
@@ -30,7 +34,7 @@ public class Backdrop : MonoBehaviour
         float yOffset = playerPosition.y % 1000;
 
 
-        backdrop1.transform.position = new Vector2(playerPosition.x - xOffset, playerPosition.y - yOffset);
+        backdrop1.transform.position = new Vector2(playerPosition.x - (xOffset/2), playerPosition.y - (yOffset / 2));
         backdrop2.transform.position = (Vector2)backdrop1.transform.position + Vector2.up * 1000;
         backdrop3.transform.position = (Vector2)backdrop1.transform.position + Vector2.up * -1000;
 ;
@@ -59,6 +63,7 @@ public class Backdrop : MonoBehaviour
             cloud.size = new Vector2(500, 500);
         }
 
-        //planet.transform.position = new Vector2(planet.transform.position.x, );
+        planet.GetComponent<SpriteRenderer>().sprite = planetSprites[zone];
+        planet.transform.position = new Vector2(playerPosition.x + planetXOffset - (playerPosition.x / 10) + (planetXTravelDistance - (planetXTravelDistance * (zoneProgress * 2))), playerPosition.y + (planetTravelDistance - (planetTravelDistance * (zoneProgress * 2))));
     }
 }
