@@ -18,15 +18,13 @@ public class PlayerMovement : MonoBehaviour
     public float topSpeed;
     public float acceleration;
     public float decceleration;
+    public float currentFuel = 0f;
+    public float maxFuel = 100f;
+    public float fuelConsumptionRate = 10f;
 
     [Header("Fins")]
     public float turnSpeed;
     public float maxTurnSpeed;
-
-    [Header("Engine")]
-    public float currentFuel = 0f;
-    public float maxFuel = 100f;
-    public float fuelConsumptionRate = 10f;
 
     [Header("Sprites")]
     public SpriteRenderer hullSprite;

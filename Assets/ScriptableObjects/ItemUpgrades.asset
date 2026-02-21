@@ -9,14 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 404a481d1a131ae408f49e6c871e479e, type: 3}
   m_Name: ItemUpgrades
   m_EditorClassIdentifier: Assembly-CSharp::Items
-  engineUpgrades:
-  - {fileID: 11400000, guid: c732ab8f27c6d7c48982d2ce0b8c7af5, type: 2}
-  finUpgrades:
-  - {fileID: 11400000, guid: b4dae75b777929f48bbeb08c3209b61f, type: 2}
-  hullUpgrades:
-  - {fileID: 11400000, guid: 14b7e986b5cbfca4aaed849cf2bb5808, type: 2}
-  defenseUpgrades:
-  - {fileID: 11400000, guid: d5608d1ddeb38b94ebd0302503d3f8ef, type: 2}
+  engineUpgrades: []
+  finUpgrades: []
+  hullUpgrades: []
+  defenseUpgrades: []
