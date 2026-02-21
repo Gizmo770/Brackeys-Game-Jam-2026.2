@@ -16,6 +16,8 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Engine")]
     public float topSpeed;
+    public float minSpeed = 2;
+    public float speedLossMultiplier = 1;
     public float acceleration;
     public float decceleration;
     public float currentFuel = 0f;
@@ -57,11 +59,12 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void RecalculateAppliedStats()
+    public void RecalculateAppliedStats()
     {
         EngineUpgrade engine = ShipStats.engineUpgrade;
-        maxFuel = engine.maxFuel;
         topSpeed = engine.topSpeed;
+        acceleration = engine.acceleration;
+        maxFuel = engine.maxFuel;
         thrusterSprite.sprite = engine.sprite;
 
         FinUpgrade fins = ShipStats.finUpgrade;
@@ -70,9 +73,8 @@ public class PlayerMovement : MonoBehaviour
         fin2Sprite.sprite = fins.sprite2;
 
         HullUpgrade hull = ShipStats.hullUpgrade;
+        speedLossMultiplier = ShipStats.hullUpgrade.speedLossMultiplier;
         hullSprite.sprite = hull.sprite;
-        //appliedHealth = hull.health;
-        //appliedSpeedLossMultiplier = hull.speedLossMultiplier;
 
         DefenseUpgrade defense = ShipStats.defenseUpgrade;
         defenseSprite.sprite = defense.sprite;
@@ -128,6 +130,20 @@ public class PlayerMovement : MonoBehaviour
     private void DrainFuel()
     {
         currentFuel -= fuelConsumptionRate * Time.fixedDeltaTime;
+    }
+
+    public void ApplySpeedLossFromObstacle(float speedLost)
+    {
+        Vector2 speedAfterLoss = rb.linearVelocity.normalized * (rb.linearVelocity.magnitude - (speedLost * speedLossMultiplier));
+
+        if (speedAfterLoss.magnitude <= minSpeed)
+        {
+            rb.linearVelocity = speedAfterLoss.normalized * minSpeed;
+        }
+        else
+        {
+            rb.linearVelocity = speedAfterLoss;
+        }
     }
 
     public IEnumerator Launch(float launchAngle, float launchSpeed, float timeBeforeLaunch)

@@ -126,6 +126,7 @@ public class GameManager : MonoBehaviour
                 PlayerMovement.ShipStats.defenseUpgrade = items.defenseUpgrades[index]; 
                 break;
         }
+        playerMovement.RecalculateAppliedStats();
     }
 
     private void CalculateLastRunStats()

@@ -5,7 +5,6 @@ public class HullUpgrade : ScriptableObject
 {
     public string partName;
     public string description;
-    public float health;
     public float speedLossMultiplier;
     public int cost;
     public Sprite sprite;

@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: HullUpgrade2Fish
   m_EditorClassIdentifier: Assembly-CSharp::HullUpgrade
   partName: Fish Hull
-  description: Reduces speed loss from hitting obstacles.
-  health: 250
-  speedLossMultiplier: 1
-  cost: 0
+  description: 'Speed Loss Multiplier: 75%'
+  speedLossMultiplier: 0.75
+  cost: 100
   sprite: {fileID: -5367920913132119968, guid: b7d3b59e973bd524da89f306c8bd8b8f, type: 3}
