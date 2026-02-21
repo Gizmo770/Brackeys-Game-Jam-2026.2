@@ -1111,7 +1111,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 6423806749927177598, guid: d1cc0972142168244975eb80436fa8e4, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.4}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1513,7 +1513,7 @@ Transform:
   m_GameObject: {fileID: 711144399}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 30, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1541,6 +1541,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1c51087eb09e214c97915b5ae7bd7c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Backdrop
+  planetXOffset: 9
+  planetTravelDistance: 10
+  planetXTravelDistance: 4
   tintColors:
   - {r: 0, g: 0, b: 0, a: 0}
   - {r: 0.0039265803, g: 0, b: 0.68235296, a: 0.2}
@@ -1551,6 +1554,11 @@ MonoBehaviour:
   - {fileID: -8284970034845382894, guid: 84d1bfac9eea7a144b0e8bcafb213983, type: 3}
   - {fileID: 5326162546844830518, guid: 9efb267b974d29041a9befa41d796626, type: 3}
   - {fileID: 2854336666830439501, guid: d6875bf484e6ea546ab7eeaf41190f31, type: 3}
+  planetSprites:
+  - {fileID: 6423806749927177598, guid: d1cc0972142168244975eb80436fa8e4, type: 3}
+  - {fileID: -4992678628903780660, guid: 9c3c2499fe534ae4eaaa1c283ba3d890, type: 3}
+  - {fileID: -596426477802388053, guid: 4f957998cc226834cb077dca128a761f, type: 3}
+  - {fileID: 0}
   player: {fileID: 749293199}
   progressTracker: {fileID: 1618810151}
   backdrop1: {fileID: 778818369}
@@ -1582,7 +1590,7 @@ MonoBehaviour:
   - {fileID: 283193750}
   - {fileID: 360592848}
   - {fileID: 1917056293}
-  planet: {fileID: 0}
+  planet: {fileID: 374048344}
 --- !u!1 &749293199
 GameObject:
   m_ObjectHideFlags: 0
