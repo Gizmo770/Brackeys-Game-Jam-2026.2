@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BaseEngine
   m_EditorClassIdentifier: Assembly-CSharp::EngineUpgrade
   partName: BaseEngine
-  description: Base Engine
+  description: Increases top speed and acceleration.
   maxFuel: 10
   topSpeed: 10
   cost: 0
