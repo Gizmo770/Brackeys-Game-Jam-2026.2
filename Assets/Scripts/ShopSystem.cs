@@ -27,7 +27,7 @@ public class ShopSystem : MonoBehaviour
 
     public void UpdateMoneyText()
     {
-        moneyText.text = "Credits Available: " + gameManager.money.ToString();
+        moneyText.text = "Credits: " + gameManager.money.ToString() + "c";
     }
 }
 

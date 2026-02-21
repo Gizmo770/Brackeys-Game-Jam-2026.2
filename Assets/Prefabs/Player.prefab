@@ -210,6 +210,11 @@ MonoBehaviour:
   currentFuel: 100
   maxFuel: 100
   fuelConsumptionRate: 10
+  hullSprite: {fileID: 3375791860811920827}
+  thrusterSprite: {fileID: 8765111706790444737}
+  fin1Sprite: {fileID: 4407984105528516933}
+  fin2Sprite: {fileID: 7179793382566367117}
+  defenseSprite: {fileID: 3116062089438229573}
 --- !u!1 &6375039720267844209
 GameObject:
   m_ObjectHideFlags: 0
