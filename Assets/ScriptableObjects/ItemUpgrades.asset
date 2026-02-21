@@ -12,7 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 404a481d1a131ae408f49e6c871e479e, type: 3}
   m_Name: ItemUpgrades
   m_EditorClassIdentifier: Assembly-CSharp::Items
-  engineUpgrades: []
-  finUpgrades: []
-  hullUpgrades: []
-  defenseUpgrades: []
+  engineUpgrades:
+  - {fileID: 11400000, guid: a0702a2a07d2cd042bc95934ade47457, type: 2}
+  - {fileID: 11400000, guid: 6eaf075d9709bb347a01aef2ad08d2e7, type: 2}
+  - {fileID: 11400000, guid: 0b6c2d98824835c41b98d9811309843e, type: 2}
+  - {fileID: 11400000, guid: c172d1177f74ff947bba39ce01c96115, type: 2}
+  finUpgrades:
+  - {fileID: 11400000, guid: 2dc3aa1a551d2734ea4018939e5b9103, type: 2}
+  - {fileID: 11400000, guid: 45033106322dbde4eae4426b39e07808, type: 2}
+  - {fileID: 11400000, guid: 55b45cca33426854782f8564f20ddb01, type: 2}
+  - {fileID: 11400000, guid: 54c6f49016a2d0244a4132ee0157b9e9, type: 2}
+  hullUpgrades:
+  - {fileID: 11400000, guid: 4de00ff30d3428d42972798bfcd434d7, type: 2}
+  - {fileID: 11400000, guid: 87c503d073e56a343b37535e68ff0161, type: 2}
+  - {fileID: 11400000, guid: 67a289bce5d4e7a4bb6d9d9fe416427b, type: 2}
+  - {fileID: 11400000, guid: d4bd1e9e9377e4548880a56373b3ed3d, type: 2}
+  defenseUpgrades:
+  - {fileID: 11400000, guid: e786a0e7037f958428671ef7cb57dd33, type: 2}
+  - {fileID: 11400000, guid: 17e7b1607738392439e5c26bc7c88e92, type: 2}
+  - {fileID: 11400000, guid: 7831bfb4634bde243a8f48c90ce9ae39, type: 2}
+  - {fileID: 11400000, guid: 9b43a31e26c8bd243b5581e586876387, type: 2}

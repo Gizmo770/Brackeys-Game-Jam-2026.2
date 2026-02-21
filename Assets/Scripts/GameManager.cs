@@ -109,6 +109,18 @@ public class GameManager : MonoBehaviour
         };
     }
 
+    public string GetUpgradeName(UpgradeSystem.UpgradeType type, int index)
+    {
+        return type switch
+        {
+            UpgradeSystem.UpgradeType.Engine => items.engineUpgrades[index].partName,
+            UpgradeSystem.UpgradeType.Fin => items.finUpgrades[index].partName,
+            UpgradeSystem.UpgradeType.Hull => items.hullUpgrades[index].partName,
+            UpgradeSystem.UpgradeType.Defense => items.defenseUpgrades[index].partName,
+            _ => "Unknown Upgrade"
+        };
+    }
+
     public void EquipUpgrade(UpgradeSystem.UpgradeType type, int index)
     {
         switch (type)

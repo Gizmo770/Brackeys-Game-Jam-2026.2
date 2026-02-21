@@ -16,5 +16,5 @@ MonoBehaviour:
   description: Turn Speed +100
   maxTurnSpeed: 150
   cost: 400
-  sprite1: {fileID: -6712249868162810433, guid: b7d3b59e973bd524da89f306c8bd8b8f, type: 3}
-  sprite2: {fileID: -4029127177312398658, guid: b7d3b59e973bd524da89f306c8bd8b8f, type: 3}
+  sprite1: {fileID: 5087144269254568534, guid: b4a1428a8cd04a845999a248a7767485, type: 3}
+  sprite2: {fileID: -2124575252408815567, guid: b4a1428a8cd04a845999a248a7767485, type: 3}

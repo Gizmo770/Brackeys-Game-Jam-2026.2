@@ -36,6 +36,11 @@ public class UpgradeSystem : MonoBehaviour
         if (currentIndex > 0)
         {
             currentIndex--;
+            // Equip if owned.
+            if (gameManager.OwnsUpgrade(upgradeType, currentIndex))
+            {
+                gameManager.EquipUpgrade(upgradeType, currentIndex);
+            }
             RefreshUI();
         }
     }
@@ -45,20 +50,17 @@ public class UpgradeSystem : MonoBehaviour
         if (currentIndex < GetNumUpgradesAvailable() - 1)
         {
             currentIndex++;
+            // Equip if owned.
+            if (gameManager.OwnsUpgrade(upgradeType, currentIndex))
+            {
+                gameManager.EquipUpgrade(upgradeType, currentIndex);
+            }
             RefreshUI();
         }
     }
 
     public void PurchaseEquip()
     {
-        // Equip if owned.
-        if(gameManager.OwnsUpgrade(upgradeType, currentIndex))
-        {
-            gameManager.EquipUpgrade(upgradeType, currentIndex);
-            RefreshUI();
-            return;
-        }
-
         // Purchase if not owned.
         int upgradeCost = GetCurrentCost();
         if(gameManager.money >= upgradeCost)
@@ -108,15 +110,12 @@ public class UpgradeSystem : MonoBehaviour
     {
         if (gameManager.IsUpgradeEquipped(upgradeType, currentIndex))
         {
-            purchaseEquipText.text = "EQUIPPED";
-        }
-        else if (gameManager.OwnsUpgrade(upgradeType, currentIndex))
-        {
-            purchaseEquipText.text = "Equip";
+            purchaseEquipText.text 
+                = GameManager.Instance.GetUpgradeName(upgradeType, currentIndex);
         }
         else
         {
-            purchaseEquipText.text = $"Purchase ({GetCurrentCost()})";
+            purchaseEquipText.text = $"${GetCurrentCost()}";
         }
     }
 

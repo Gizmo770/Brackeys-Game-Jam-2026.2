@@ -18,4 +18,4 @@ MonoBehaviour:
   acceleration: 17
   maxFuel: 10
   cost: 150
-  sprite: {fileID: -2633907795195972977, guid: b7d3b59e973bd524da89f306c8bd8b8f, type: 3}
+  sprite: {fileID: 1888489391045164621, guid: f959302575f79044c9f5fd81c886002a, type: 3}

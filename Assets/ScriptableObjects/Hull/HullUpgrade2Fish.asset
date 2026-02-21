@@ -16,4 +16,4 @@ MonoBehaviour:
   description: 'Speed Loss Multiplier: 75%'
   speedLossMultiplier: 0.75
   cost: 100
-  sprite: {fileID: -5367920913132119968, guid: b7d3b59e973bd524da89f306c8bd8b8f, type: 3}
+  sprite: {fileID: 1183018853184661437, guid: f959302575f79044c9f5fd81c886002a, type: 3}
