@@ -8,7 +8,7 @@ public class ShopSystem : MonoBehaviour
     public TextMeshProUGUI moneyText;
 
     [Header("UI Last Run Text Elements")]
-    public TextMeshProUGUI distanceToNextText;
+    public TextMeshProUGUI cashEarnedText;
     public TextMeshProUGUI verticalDistanceText;
     public TextMeshProUGUI obstaclesDestroyedText;
 
@@ -17,8 +17,8 @@ public class ShopSystem : MonoBehaviour
         // Updates Shop UI for last run stats.
         gameManager = Object.FindAnyObjectByType<GameManager>();
         UpdateMoneyText();
-        distanceToNextText.text 
-            = "Distance to Next Area: " + gameManager.distanceToNextBiome.ToString();
+        cashEarnedText.text 
+            = "Cash Earned: $" + gameManager.cashEarned.ToString();
         verticalDistanceText.text 
             = "Vertical Travelled: " + gameManager.verticalDistanceTraveled.ToString();
         obstaclesDestroyedText.text
@@ -27,7 +27,7 @@ public class ShopSystem : MonoBehaviour
 
     public void UpdateMoneyText()
     {
-        moneyText.text = "Credits Available: " + gameManager.money.ToString();
+        moneyText.text = "$" + gameManager.money.ToString();
     }
 }
 

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BaseFin
   m_EditorClassIdentifier: Assembly-CSharp::FinUpgrade
   partName: Base Fin
-  description: 
+  description: Increases turn speed.
   maxTurnSpeed: 50
   cost: 100
   sprite1: {fileID: -6712249868162810433, guid: b7d3b59e973bd524da89f306c8bd8b8f, type: 3}

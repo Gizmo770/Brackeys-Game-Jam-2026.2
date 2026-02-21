@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using Unity.VisualScripting;
 
 public class UpgradeSystem : MonoBehaviour
 {
@@ -9,9 +10,9 @@ public class UpgradeSystem : MonoBehaviour
     public enum UpgradeType { Engine, Fin, Hull, Defense }
     public UpgradeType upgradeType;
 
-    // TODO: Add description and cost display if necessary.
     [Header("UI")]
-    public TextMeshProUGUI upgradeNameText;
+    public GameObject lastRunStats;
+    public TextMeshProUGUI upgradeNameAndDescriptionText;
     public TextMeshProUGUI purchaseEquipText;
 
     private int currentIndex = 0;
@@ -25,6 +26,8 @@ public class UpgradeSystem : MonoBehaviour
             shopSystem = FindAnyObjectByType<ShopSystem>();
         }
 
+        upgradeNameAndDescriptionText.enabled = false;
+        lastRunStats.GameObject().SetActive(true);
         RefreshUI();
     }
 
@@ -103,26 +106,6 @@ public class UpgradeSystem : MonoBehaviour
 
     private void RefreshUI()
     {
-        switch (upgradeType)
-        {
-            case UpgradeType.Engine:
-                upgradeNameText.text = GameManager.Instance.items.engineUpgrades[currentIndex].name;
-                break;
-
-            case UpgradeType.Fin:
-                upgradeNameText.text = GameManager.Instance.items.finUpgrades[currentIndex].name;
-                break;
-
-            case UpgradeType.Hull:
-                upgradeNameText.text = GameManager.Instance.items.hullUpgrades[currentIndex].name;
-                break;
-
-            case UpgradeType.Defense:
-                upgradeNameText.text = GameManager.Instance.items.defenseUpgrades[currentIndex].name;
-                break;
-        }
-
-
         if (gameManager.IsUpgradeEquipped(upgradeType, currentIndex))
         {
             purchaseEquipText.text = "EQUIPPED";
@@ -135,5 +118,25 @@ public class UpgradeSystem : MonoBehaviour
         {
             purchaseEquipText.text = $"Purchase ({GetCurrentCost()})";
         }
+    }
+
+    public void DisplayUpgradeInfoText()
+    {
+        upgradeNameAndDescriptionText.text = upgradeType switch
+        {
+            UpgradeType.Engine => $"Name: {GameManager.Instance.items.engineUpgrades[currentIndex].partName}\n{GameManager.Instance.items.engineUpgrades[currentIndex].description}",
+            UpgradeType.Fin => $"Name: {GameManager.Instance.items.finUpgrades[currentIndex].partName}\n{GameManager.Instance.items.finUpgrades[currentIndex].description}",
+            UpgradeType.Hull => $"Name: {GameManager.Instance.items.hullUpgrades[currentIndex].partName}\n{GameManager.Instance.items.hullUpgrades[currentIndex].description}",
+            UpgradeType.Defense => $"Name: {GameManager.Instance.items.defenseUpgrades[currentIndex].partName}\n{GameManager.Instance.items.defenseUpgrades[currentIndex].description}",
+            _ => ""
+        };
+        lastRunStats.GameObject().SetActive(false);
+        upgradeNameAndDescriptionText.enabled = true;
+    }
+
+    public void HideUpgradeInfoText()
+    {
+        upgradeNameAndDescriptionText.enabled = false;
+        lastRunStats.GameObject().SetActive(true);
     }
 }

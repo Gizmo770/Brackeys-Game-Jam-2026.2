@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
     public List<int> ownedDefenseUpgrades = new();
 
     [Header("Last Run Tracker Stats")]
-    public float distanceToNextBiome;
+    public float cashEarned;
     public float verticalDistanceTraveled;
     public int obstaclesDestroyed;
 

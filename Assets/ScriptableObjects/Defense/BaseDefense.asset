@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BaseDefense
   m_EditorClassIdentifier: Assembly-CSharp::DefenseUpgrade
   partName: BaseDefense
-  description: Base
+  description: No additional countermeasures.
   countermeasurePrefab: {fileID: 0}
   cost: 0
-  isBase: 1
+  sprite: {fileID: 0}

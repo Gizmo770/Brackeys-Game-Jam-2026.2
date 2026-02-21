@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BaseHull
   m_EditorClassIdentifier: Assembly-CSharp::HullUpgrade
   partName: Base Hull
-  description: Base Hull
+  description: Reduces speed loss from hitting obstacles.
   health: 250
   speedLossMultiplier: 1
   cost: 0
