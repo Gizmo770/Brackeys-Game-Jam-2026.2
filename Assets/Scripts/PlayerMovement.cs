@@ -8,13 +8,13 @@ public class PlayerMovement : MonoBehaviour
 {
     public static ShipStats ShipStats;
 
-    private Rigidbody2D rb;
+    [HideInInspector]
+    public Rigidbody2D rb;
     private Vector2 playerInput;
     private bool launchStarted = false;
     public bool canMove = false;
 
     [Header("Engine")]
-    public float currentSpeed;
     public float topSpeed;
     public float acceleration;
     public float decceleration;
@@ -77,14 +77,15 @@ public class PlayerMovement : MonoBehaviour
             rb.AddForce(rb.transform.up * acceleration, ForceMode2D.Force);
             DrainFuel();
         }
-
-        // Deceleration no reverse
-        if (playerInput.y <= 0)
-        {
-            rb.AddForce(-rb.linearVelocity.normalized * decceleration, ForceMode2D.Force);
+        else
+        {            
             if (rb.linearVelocity.magnitude < 0.05f)
             {
                 rb.linearVelocity = Vector2.zero;
+            }
+            else
+            {
+                rb.AddForce(-rb.linearVelocity.normalized * decceleration, ForceMode2D.Force);
             }
         }
 

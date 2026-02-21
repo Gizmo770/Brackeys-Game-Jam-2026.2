@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EngineUpgrade
   partName: BaseEngine
   description: Base Engine
-  maxFuel: 100
-  topSpeed: 50
+  maxFuel: 10
+  topSpeed: 10
   cost: 0

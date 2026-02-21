@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour
         // Player loss condition
         if(playerMovement != null)
         {
-            if(playerMovement.currentFuel <= 0 && playerMovement.currentSpeed <= 0)
+            if(playerMovement.currentFuel <= 0 && playerMovement.rb.linearVelocity.magnitude <= .05f)
             {
                 CalculateLastRunStats();
                 FindFirstObjectByType<SceneTransition>().TriggerSceneChange("ShopScene");
