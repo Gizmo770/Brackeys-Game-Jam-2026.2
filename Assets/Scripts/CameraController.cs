@@ -6,16 +6,18 @@ public class CameraController : MonoBehaviour
 {
     private PlayerMovement playerMovement;
 
-    public Transform target;
-
     [Header("Follow")]
-    public float lookAheadDistance = 2f;
+    public float moveSpeed;
+    public float maxLookAheadDistance;
 
     [Header("Zoom")]
-    public float normalZoom = 10f;
-    public float maxZoomOut = 15f;
+    public float zoomSpeed;
+    public float normalZoom;
+    public float maxZoomOut;
+    public float maxZoomPlayerSpeed;
 
     private Camera cam;
+    private Vector3 offset;
 
     private void Start()
     {
@@ -26,28 +28,16 @@ public class CameraController : MonoBehaviour
 
     void LateUpdate()
     {
-        float currentPlayerSpeed = playerMovement.GetComponent<Rigidbody2D>().linearVelocity.magnitude;
+        float playerYSpeed = Mathf.Clamp(playerMovement.GetComponent<Rigidbody2D>().linearVelocity.y, -maxZoomPlayerSpeed, maxZoomPlayerSpeed);
+        float zoomPercent = 1 - ((maxZoomPlayerSpeed - playerYSpeed) / maxZoomPlayerSpeed);
 
-        // Camera follow with look-ahead
-        Vector3 targetPosition = target.position + (target.up * lookAheadDistance);
+        float targetZoom = normalZoom + ((maxZoomOut - normalZoom) * Mathf.Abs(zoomPercent));
+        cam.orthographicSize = Mathf.MoveTowards(cam.orthographicSize, targetZoom, zoomSpeed * Time.deltaTime);
+
+        Vector3 targetOffset = Vector3.up * (maxLookAheadDistance * zoomPercent);
+        offset = Vector3.MoveTowards(offset, targetOffset, moveSpeed * Time.deltaTime);
+        Vector3 targetPosition = playerMovement.transform.position + offset;
         targetPosition.z = -10;
         transform.position = targetPosition;
-
-        // Speed-based zoom
-        float currentSpeed = currentPlayerSpeed;
-        if(playerMovement.currentSpeed <= 0)
-        {
-            cam.orthographicSize = normalZoom;
-        }
-        else
-        {
-            float speedPercent = Mathf.Clamp01(currentSpeed / playerMovement.currentSpeed);
-            cam.orthographicSize = Mathf.Lerp(normalZoom, maxZoomOut, speedPercent);
-        }
-
-        if (Mathf.Abs(cam.orthographicSize - normalZoom) < 0.1f)
-        {
-            cam.orthographicSize = normalZoom;
-        }
     }
 }

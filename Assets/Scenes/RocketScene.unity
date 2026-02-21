@@ -906,10 +906,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a770980db0f1fe4fa32d767fdefed27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraController
-  target: {fileID: 749293203}
-  lookAheadDistance: 2.5
+  moveSpeed: 6
+  maxLookAheadDistance: 10
+  zoomSpeed: 4
   normalZoom: 10
-  maxZoomOut: 15
+  maxZoomOut: 20
+  maxZoomPlayerSpeed: 40
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
