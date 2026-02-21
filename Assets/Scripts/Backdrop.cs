@@ -21,6 +21,7 @@ public class Backdrop : MonoBehaviour
 
     public List<SpriteRenderer> tints;
     public List<SpriteRenderer> clouds;
+    public GameObject planet;
 
     void Update()
     {
@@ -57,5 +58,7 @@ public class Backdrop : MonoBehaviour
             cloud.color = cloudColor;
             cloud.size = new Vector2(500, 500);
         }
+
+        //planet.transform.position = new Vector2(planet.transform.position.x, );
     }
 }
