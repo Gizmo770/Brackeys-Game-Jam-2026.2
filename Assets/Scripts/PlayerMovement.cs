@@ -28,6 +28,13 @@ public class PlayerMovement : MonoBehaviour
     public float maxFuel = 100f;
     public float fuelConsumptionRate = 10f;
 
+    [Header("Sprites")]
+    public SpriteRenderer hullSprite;
+    public SpriteRenderer thrusterSprite;
+    public SpriteRenderer fin1Sprite;
+    public SpriteRenderer fin2Sprite;
+    public SpriteRenderer defenseSprite;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -57,15 +64,20 @@ public class PlayerMovement : MonoBehaviour
         EngineUpgrade engine = ShipStats.engineUpgrade;
         maxFuel = engine.maxFuel;
         topSpeed = engine.topSpeed;
+        thrusterSprite.sprite = engine.sprite;
 
         FinUpgrade fins = ShipStats.finUpgrade;
         maxTurnSpeed = fins.maxTurnSpeed;
+        fin1Sprite.sprite = fins.sprite1;
+        fin2Sprite.sprite = fins.sprite2;
 
         HullUpgrade hull = ShipStats.hullUpgrade;
+        hullSprite.sprite = hull.sprite;
         //appliedHealth = hull.health;
         //appliedSpeedLossMultiplier = hull.speedLossMultiplier;
 
         DefenseUpgrade defense = ShipStats.defenseUpgrade;
+        defenseSprite.sprite = defense.sprite;
         //appliedDefensePrefab = defense.countermeasurePrefab;
     }
 

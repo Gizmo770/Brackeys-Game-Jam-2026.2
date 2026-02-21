@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 0}
-  m_Name: BaseFin
-  m_EditorClassIdentifier: Assembly-CSharp::FinUpgrade
-  partName: Base Fin
-  description: 
-  maxTurnSpeed: 50
-  cost: 100
-  isBase: 1
+  m_Name: BaseEngine
+  m_EditorClassIdentifier: Assembly-CSharp::EngineUpgrade
+  partName: BaseEngine
+  description: Base Engine
+  maxFuel: 10
+  topSpeed: 10
+  cost: 0
+  sprite: {fileID: -2633907795195972977, guid: b7d3b59e973bd524da89f306c8bd8b8f, type: 3}

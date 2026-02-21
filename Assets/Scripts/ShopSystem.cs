@@ -54,6 +54,7 @@ public class EngineUpgrade : ScriptableObject
     public float maxFuel;
     public float topSpeed;
     public int cost;
+    public Sprite sprite;
 }
 
 [CreateAssetMenu(fileName = "FinUpgrade", menuName = "ShipParts/Fin", order = 1)]
@@ -63,6 +64,8 @@ public class FinUpgrade : ScriptableObject
     public string description;
     public float maxTurnSpeed;
     public int cost;
+    public Sprite sprite1;
+    public Sprite sprite2;
 }
 
 [CreateAssetMenu(fileName = "HullUpgrade", menuName = "ShipParts/Hull", order = 1)]
@@ -73,6 +76,7 @@ public class HullUpgrade : ScriptableObject
     public float health;
     public float speedLossMultiplier;
     public int cost;
+    public Sprite sprite;
 }
 
 [CreateAssetMenu(fileName = "DefenseUpgrade", menuName = "ShipParts/Defense", order = 1)]
@@ -82,4 +86,5 @@ public class DefenseUpgrade : ScriptableObject
     public string description;
     public GameObject countermeasurePrefab;
     public int cost;
+    public Sprite sprite;
 }
