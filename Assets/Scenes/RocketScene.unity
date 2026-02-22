@@ -2176,6 +2176,65 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!1 &934807320
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 934807322}
+  - component: {fileID: 934807321}
+  m_Layer: 0
+  m_Name: ObstacleSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &934807321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 934807320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e8def0462fc1f041ae2776c3408724b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ObstacleSpawner
+  zones:
+  - progressBetweenObstacles: 0.125
+    obstacles:
+    - {fileID: 4277317895291903220, guid: 53857209d5f45b44c8a126a461cff78f, type: 3}
+  - progressBetweenObstacles: 0.1
+    obstacles:
+    - {fileID: 4277317895291903220, guid: 6ac23507b97c67e4e9476d8741ef6a5f, type: 3}
+  - progressBetweenObstacles: 0.075
+    obstacles:
+    - {fileID: 4277317895291903220, guid: d2c21ee166d409e4195d8c2078553502, type: 3}
+  - progressBetweenObstacles: 0.05
+    obstacles:
+    - {fileID: 4277317895291903220, guid: 790ddce4614759d40a4899d791f1f39b, type: 3}
+  spawnXRange: 20
+  spawnAheadDistance: 15
+--- !u!4 &934807322
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 934807320}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &952689606
 GameObject:
   m_ObjectHideFlags: 0
@@ -5054,3 +5113,4 @@ SceneRoots:
   - {fileID: 711144400}
   - {fileID: 1460180819}
   - {fileID: 8161676154418399607}
+  - {fileID: 934807322}
