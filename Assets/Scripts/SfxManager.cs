@@ -11,7 +11,7 @@ public class SfxManager : MonoBehaviour
     private bool fadeInSpaceTheme = false;
 
     public float defaultThrustingVolume = 1f;
-    private bool fadeInThrusting = false;
+    public bool fadeInThrusting = false;
 
     public AudioSource bubblePop;
     public AudioSource bubbleRegenerate;
@@ -106,6 +106,7 @@ public class SfxManager : MonoBehaviour
 
     public void FadeInShopTheme()
     {
+        PlayShopThemeAirportLounge();
         SfxManager.Instance.fadeInShopTheme = true;
     }
 
@@ -116,6 +117,7 @@ public class SfxManager : MonoBehaviour
 
     public void FadeInSpaceTheme()
     {
+        PlaySpaceThemeMesmerizingGalaxyLoop();
         SfxManager.Instance.fadeInSpaceTheme = true;
     }
 
@@ -124,8 +126,10 @@ public class SfxManager : MonoBehaviour
         SfxManager.Instance.fadeInThrusting = false;
     }
 
-    public void FadeInThrusters()
-    {
+    public void FadeInThrusters() { 
+        if (!thrustingLooping.isPlaying) {
+            PlayThrustingLooping();
+        }
         SfxManager.Instance.fadeInThrusting = true;
     }
 }
