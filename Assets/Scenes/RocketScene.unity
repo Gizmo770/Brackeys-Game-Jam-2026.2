@@ -1624,13 +1624,15 @@ MonoBehaviour:
   rb: {fileID: 0}
   canMove: 0
   topSpeed: 75
+  minSpeed: 2
+  speedLossMultiplier: 1
   acceleration: 12
   decceleration: 2
-  turnSpeed: 50
-  maxTurnSpeed: 50
   currentFuel: 100
   maxFuel: 100
   fuelConsumptionRate: 10
+  turnSpeed: 50
+  maxTurnSpeed: 50
   hullSprite: {fileID: 176079803}
   thrusterSprite: {fileID: 810839367}
   fin1Sprite: {fileID: 205467930}
@@ -3605,7 +3607,7 @@ Animator:
   m_GameObject: {fileID: 1595879221}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5ce60946a6683d54a9f28d1bb72fc9ac, type: 2}
+  m_Controller: {fileID: 9100000, guid: a7fbbd4ad4c0a2f4b96d1c4d5b5ed46d, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
