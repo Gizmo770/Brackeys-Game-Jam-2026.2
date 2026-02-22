@@ -16,5 +16,5 @@ MonoBehaviour:
   description: '+400% fuel / Speed Loss Multiplier: 15%'
   speedLossMultiplier: 0.15
   maxFuel: 200
-  cost: 400
+  cost: 500
   sprite: {fileID: 7770620908168572785, guid: b4a1428a8cd04a845999a248a7767485, type: 3}

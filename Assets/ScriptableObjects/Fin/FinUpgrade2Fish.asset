@@ -15,6 +15,6 @@ MonoBehaviour:
   partName: Fish Fin
   description: Turn Speed +2
   maxTurnSpeed: 5
-  cost: 100
+  cost: 50
   sprite1: {fileID: 2712707393970022627, guid: f959302575f79044c9f5fd81c886002a, type: 3}
   sprite2: {fileID: 6637721541032404894, guid: f959302575f79044c9f5fd81c886002a, type: 3}

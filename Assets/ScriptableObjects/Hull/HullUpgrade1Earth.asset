@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6882ba76bc215e948a591cdb4c39acec, type: 3}
   m_Name: HullUpgrade1Earth
   m_EditorClassIdentifier: Assembly-CSharp::HullUpgrade
-  partName: Earth Hull
+  partName: Basic Hull
   description: Increases fuel and reduces speed loss from hitting debris.
   speedLossMultiplier: 1
   maxFuel: 50

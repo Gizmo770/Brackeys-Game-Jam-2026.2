@@ -15,5 +15,5 @@ MonoBehaviour:
   partName: Blaster
   description: Adds a blaster that shoots debris in front of you.
   defenseLevel: 3
-  cost: 500
+  cost: 300
   sprite: {fileID: 21300000, guid: 62325b09103e29d43ac992f9533198fb, type: 3}

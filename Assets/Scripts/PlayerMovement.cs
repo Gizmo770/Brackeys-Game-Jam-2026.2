@@ -1,8 +1,6 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -227,6 +225,7 @@ public class PlayerMovement : MonoBehaviour
             yield return new WaitForSeconds(timeBeforeLaunch);
             rb.AddForce(rb.transform.up * launchSpeed, ForceMode2D.Impulse);
             canMove = true;
+            candyBoostMultiplier = 1.5f;
             StartCoroutine(ThrustEnum());
         }
     }

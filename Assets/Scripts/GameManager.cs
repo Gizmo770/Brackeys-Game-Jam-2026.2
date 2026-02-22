@@ -58,6 +58,7 @@ public class GameManager : MonoBehaviour
         moneyGainedLastRun = Mathf.FloorToInt(
             verticalDistanceTraveled * moneyGainPerDistance);
         money += moneyGainedLastRun;
+        money += 25;
     }
 
     public void EnsureBaseOwned()
