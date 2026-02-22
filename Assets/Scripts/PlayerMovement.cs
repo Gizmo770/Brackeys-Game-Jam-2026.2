@@ -82,6 +82,7 @@ public class PlayerMovement : MonoBehaviour
         FinUpgrade fins = ShipStats.finUpgrade;
         maxTurnSpeed = fins.maxTurnSpeed;
         turnSpeed = fins.maxTurnSpeed;
+        decceleration = fins.deceleration;
         fin1Sprite.sprite = fins.sprite1;
         fin2Sprite.sprite = fins.sprite2;
 
@@ -113,7 +114,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {            
-            if (rb.linearVelocity.magnitude < 0.05f)
+            if (rb.linearVelocity.magnitude < 0.1f)
             {
                 rb.linearVelocity = Vector2.zero;
             }

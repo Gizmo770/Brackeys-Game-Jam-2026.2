@@ -34,6 +34,7 @@ public class ProgressTracker : MonoBehaviour
             Object.FindFirstObjectByType<SceneTransition>().TriggerSceneChangeWhite("VictoryScene");
             FindAnyObjectByType<PlayerMovement>().canMove = false;
             SfxManager.Instance.FadeOutThrusters();
+            SfxManager.Instance.FadeOutSpaceTheme();
         }
     }
 }
