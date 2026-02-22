@@ -21,7 +21,7 @@ public class Obstacles : MonoBehaviour
     void Update()
     {
         transform.eulerAngles = new Vector3(0, 0, transform.eulerAngles.z + rotateDirection * rotateSpeed * Time.deltaTime);
-        transform.Translate(moveSpeed * moveDirection * Time.deltaTime);
+        transform.position = transform.position + (moveSpeed * moveDirection * Time.deltaTime);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6291097899167314452}
   - component: {fileID: 6609936624960621492}
   m_Layer: 0
-  m_Name: Earth Obstacle
+  m_Name: Candy Obstacle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,13 +46,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc87c298e9f316a40b4c36bfa7c8f660, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Obstacles
-  speedLoss: 5
-  moveSpeed: 1
+  speedLoss: 15
+  moveSpeed: 6
   rotateSpeed: 30
   sprites:
-  - {fileID: -621544651894027630, guid: a00260d2cf510c343ae382f228b230c9, type: 3}
-  - {fileID: -3840777300401438387, guid: a00260d2cf510c343ae382f228b230c9, type: 3}
-  - {fileID: 2911603526497415428, guid: a00260d2cf510c343ae382f228b230c9, type: 3}
+  - {fileID: 4904216355153672528, guid: 4ad432277a8f898479c2cc52d29e89e5, type: 3}
+  - {fileID: -9080172013401142538, guid: 4ad432277a8f898479c2cc52d29e89e5, type: 3}
+  - {fileID: 9000069394586343024, guid: 4ad432277a8f898479c2cc52d29e89e5, type: 3}
+  - {fileID: 4966469394145144607, guid: 4ad432277a8f898479c2cc52d29e89e5, type: 3}
+  - {fileID: -2429498318149552160, guid: 4ad432277a8f898479c2cc52d29e89e5, type: 3}
 --- !u!58 &6609936624960621492
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -170,7 +172,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -621544651894027630, guid: a00260d2cf510c343ae382f228b230c9, type: 3}
+  m_Sprite: {fileID: 4904216355153672528, guid: 4ad432277a8f898479c2cc52d29e89e5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

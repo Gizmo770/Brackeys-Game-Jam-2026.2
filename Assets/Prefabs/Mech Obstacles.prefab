@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6291097899167314452}
   - component: {fileID: 6609936624960621492}
   m_Layer: 0
-  m_Name: Earth Obstacle
+  m_Name: Mech Obstacles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,13 +46,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc87c298e9f316a40b4c36bfa7c8f660, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Obstacles
-  speedLoss: 5
-  moveSpeed: 1
+  speedLoss: 15
+  moveSpeed: 9
   rotateSpeed: 30
   sprites:
-  - {fileID: -621544651894027630, guid: a00260d2cf510c343ae382f228b230c9, type: 3}
-  - {fileID: -3840777300401438387, guid: a00260d2cf510c343ae382f228b230c9, type: 3}
-  - {fileID: 2911603526497415428, guid: a00260d2cf510c343ae382f228b230c9, type: 3}
+  - {fileID: 5586531093065530546, guid: bbbd9bf98e3cfd54a9d5b30c6acfc669, type: 3}
+  - {fileID: 5718305972870695074, guid: bbbd9bf98e3cfd54a9d5b30c6acfc669, type: 3}
+  - {fileID: -3823871418852034691, guid: bbbd9bf98e3cfd54a9d5b30c6acfc669, type: 3}
+  - {fileID: -1184712162713015317, guid: bbbd9bf98e3cfd54a9d5b30c6acfc669, type: 3}
+  - {fileID: 235894969661246678, guid: bbbd9bf98e3cfd54a9d5b30c6acfc669, type: 3}
+  - {fileID: 3678268806794869588, guid: bbbd9bf98e3cfd54a9d5b30c6acfc669, type: 3}
+  - {fileID: 1209147186658805244, guid: bbbd9bf98e3cfd54a9d5b30c6acfc669, type: 3}
+  - {fileID: 4243220796447000802, guid: bbbd9bf98e3cfd54a9d5b30c6acfc669, type: 3}
 --- !u!58 &6609936624960621492
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -170,7 +175,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -621544651894027630, guid: a00260d2cf510c343ae382f228b230c9, type: 3}
+  m_Sprite: {fileID: 5586531093065530546, guid: bbbd9bf98e3cfd54a9d5b30c6acfc669, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
