@@ -5549,7 +5549,7 @@ GameObject:
   - component: {fileID: 1698567701}
   - component: {fileID: 1698567700}
   m_Layer: 5
-  m_Name: GameObject
+  m_Name: MoneyText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
