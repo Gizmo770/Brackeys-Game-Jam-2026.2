@@ -457,6 +457,10 @@ PrefabInstance:
       propertyPath: spawnXRange
       value: 18
       objectReference: {fileID: 0}
+    - target: {fileID: 734237387086634454, guid: e73af6cbe2407924299c75bc871752b5, type: 3}
+      propertyPath: spawnAheadDistance
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 2690703220957167070, guid: e73af6cbe2407924299c75bc871752b5, type: 3}
       propertyPath: m_Name
       value: ObstacleSpawner
@@ -4729,20 +4733,24 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 734237387086634454, guid: e73af6cbe2407924299c75bc871752b5, type: 3}
+      propertyPath: spawnAheadDistance
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 734237387086634454, guid: e73af6cbe2407924299c75bc871752b5, type: 3}
       propertyPath: zones.Array.data[0].obstacles.Array.size
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 734237387086634454, guid: e73af6cbe2407924299c75bc871752b5, type: 3}
       propertyPath: zones.Array.data[1].obstacles.Array.size
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 734237387086634454, guid: e73af6cbe2407924299c75bc871752b5, type: 3}
       propertyPath: zones.Array.data[2].obstacles.Array.size
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 734237387086634454, guid: e73af6cbe2407924299c75bc871752b5, type: 3}
       propertyPath: zones.Array.data[3].obstacles.Array.size
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 734237387086634454, guid: e73af6cbe2407924299c75bc871752b5, type: 3}
       propertyPath: 'zones.Array.data[0].obstacles.Array.data[0]'

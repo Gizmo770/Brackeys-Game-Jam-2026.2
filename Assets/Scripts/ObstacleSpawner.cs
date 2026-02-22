@@ -30,7 +30,7 @@ public class ObstacleSpawner : MonoBehaviour
 
     void Update()
     {
-        if(progressTracker.zone >= nextZoneProgresssObstacle && progressTracker.zoneProgress >= nextProgresssObstacle)
+        if(progressTracker.zone >= nextZoneProgresssObstacle && progressTracker.zoneProgress >= nextProgresssObstacle && progressTracker.zone < 4)
         {
             SpawnObstacle();
             SetNextObstacleSpawn();
@@ -39,13 +39,13 @@ public class ObstacleSpawner : MonoBehaviour
 
     private void SetNextObstacleSpawn()
     {
-        if(nextProgresssObstacle + zones[nextZoneProgresssObstacle].progressBetweenObstacles < 100)
+        if(nextProgresssObstacle + zones[nextZoneProgresssObstacle].progressBetweenObstacles < 1)
         {
             nextProgresssObstacle += zones[nextZoneProgresssObstacle].progressBetweenObstacles;
         }
         else
         {
-            nextProgresssObstacle = 0;
+            nextProgresssObstacle = zones[nextZoneProgresssObstacle].progressBetweenObstacles;
             nextZoneProgresssObstacle += 1;
         }
     }

@@ -83,7 +83,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a68776436c882c4897a0d8a6032bdb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Laser
-  speed: 25
+  speed: 35
 --- !u!50 &6822035029325028537
 Rigidbody2D:
   serializedVersion: 5
