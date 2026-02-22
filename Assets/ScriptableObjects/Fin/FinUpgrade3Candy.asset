@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: FinUpgrade3Candy
   m_EditorClassIdentifier: Assembly-CSharp::FinUpgrade
   partName: Candy Fin
-  description: Turn Speed +50
-  maxTurnSpeed: 100
+  description: Turn Speed +5
+  maxTurnSpeed: 8
   cost: 200
   sprite1: {fileID: -3495811503727067362, guid: 5436fd0521a188f4ba7cbaae00a420fe, type: 3}
   sprite2: {fileID: -368719477334798145, guid: 5436fd0521a188f4ba7cbaae00a420fe, type: 3}

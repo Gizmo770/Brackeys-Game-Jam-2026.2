@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     public static ShipStats ShipStats;
+    public bool dead;
 
     [HideInInspector]
     public Rigidbody2D rb;
@@ -69,6 +70,7 @@ public class PlayerMovement : MonoBehaviour
 
         FinUpgrade fins = ShipStats.finUpgrade;
         maxTurnSpeed = fins.maxTurnSpeed;
+        turnSpeed = fins.maxTurnSpeed;
         fin1Sprite.sprite = fins.sprite1;
         fin2Sprite.sprite = fins.sprite2;
 

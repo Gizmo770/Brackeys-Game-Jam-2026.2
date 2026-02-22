@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: FinUpgrade4Mech
   m_EditorClassIdentifier: Assembly-CSharp::FinUpgrade
   partName: Mech Fin
-  description: Turn Speed +100
-  maxTurnSpeed: 150
+  description: Turn Speed +12
+  maxTurnSpeed: 15
   cost: 400
   sprite1: {fileID: 5087144269254568534, guid: b4a1428a8cd04a845999a248a7767485, type: 3}
   sprite2: {fileID: -2124575252408815567, guid: b4a1428a8cd04a845999a248a7767485, type: 3}

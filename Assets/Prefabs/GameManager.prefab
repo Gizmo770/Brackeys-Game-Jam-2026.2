@@ -44,12 +44,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f9d5a553e285c24fbe009938c6f545d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  money: 400
+  money: 0
+  moneyGainPerDistance: 0.5
   items: {fileID: 11400000, guid: 818dcf31af00a2d4ca8b48c2cfd627a8, type: 2}
   ownedEngineUpgrades: 
   ownedFinUpgrades: 
   ownedHullUpgrades: 
   ownedDefenseUpgrades: 
-  distanceToNextBiome: 0
+  moneyGainedLastRun: 0
   verticalDistanceTraveled: 0
   obstaclesDestroyed: 0
