@@ -28,6 +28,7 @@ public class UpgradeSystem : MonoBehaviour
 
         upgradeNameAndDescriptionText.enabled = false;
         lastRunStats.GameObject().SetActive(true);
+        currentIndex = SetStartingIndex();
         RefreshUI();
     }
 
@@ -47,7 +48,7 @@ public class UpgradeSystem : MonoBehaviour
 
     public void NextUpgrade()
     {
-        if (currentIndex < GetNumUpgradesAvailable() - 1)
+        if (currentIndex < GetNumUpgradesAvailable() - 1 && gameManager.OwnsUpgrade(upgradeType, currentIndex))
         {
             currentIndex++;
             // Equip if owned.
@@ -65,7 +66,10 @@ public class UpgradeSystem : MonoBehaviour
         int upgradeCost = GetCurrentCost();
         if(gameManager.money >= upgradeCost)
         {
-            gameManager.money -= upgradeCost;
+            if(!gameManager.OwnsUpgrade(upgradeType, currentIndex))
+            {
+                gameManager.money -= upgradeCost;
+            }
             gameManager.AddOwned(upgradeType, currentIndex);
             gameManager.EquipUpgrade(upgradeType, currentIndex);
             shopSystem.UpdateMoneyText();
@@ -104,6 +108,43 @@ public class UpgradeSystem : MonoBehaviour
             default:
                 return 0;
         }
+    }
+
+    private int SetStartingIndex()
+    {
+        for(int i = 0; i < 4; i++)
+        {
+            switch (upgradeType)
+            {
+                case UpgradeType.Engine:
+                    if (GameManager.Instance.items.engineUpgrades[i] == PlayerMovement.ShipStats.engineUpgrade)
+                    {
+                        return i;
+                    }
+                    break;
+                case UpgradeType.Fin:
+                    if (GameManager.Instance.items.finUpgrades[i] == PlayerMovement.ShipStats.finUpgrade)
+                    {
+                        return i;
+                    }
+                    break;
+                case UpgradeType.Hull:
+                    if (GameManager.Instance.items.hullUpgrades[i] == PlayerMovement.ShipStats.hullUpgrade)
+                    {
+                        return i;
+                    }
+                    break;
+                case UpgradeType.Defense:
+                    if (GameManager.Instance.items.defenseUpgrades[i] == PlayerMovement.ShipStats.defenseUpgrade)
+                    {
+                        return i;
+                    }
+                    break;
+                default:
+                    return 0;
+            }
+        }
+        return 0;
     }
 
     private void RefreshUI()

@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: HullUpgrade2Fish
   m_EditorClassIdentifier: Assembly-CSharp::HullUpgrade
   partName: Fish Hull
-  description: 'Speed Loss Multiplier: 75%'
+  description: '+50% fuel / Speed Loss Multiplier: 75%'
   speedLossMultiplier: 0.75
+  maxFuel: 75
   cost: 100
   sprite: {fileID: 1183018853184661437, guid: f959302575f79044c9f5fd81c886002a, type: 3}

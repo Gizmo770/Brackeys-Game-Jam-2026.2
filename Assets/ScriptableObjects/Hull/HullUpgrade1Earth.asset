@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: HullUpgrade1Earth
   m_EditorClassIdentifier: Assembly-CSharp::HullUpgrade
   partName: Earth Hull
-  description: Reduces speed loss from hitting obstacles.
-  health: 250
+  description: Increases fuel and reduces speed loss from hitting debris.
   speedLossMultiplier: 1
+  maxFuel: 50
   cost: 0
   sprite: {fileID: -5367920913132119968, guid: b7d3b59e973bd524da89f306c8bd8b8f, type: 3}

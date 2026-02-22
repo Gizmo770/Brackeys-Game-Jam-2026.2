@@ -25,7 +25,6 @@ public class PlayerDefenses : MonoBehaviour
     {
         playerMovement = GetComponent<PlayerMovement>();
         shieldTimer = shieldRegenTime;
-        dashTimer = dashRegenTime;
         blasterTimer = blasterTime;
     }
 
@@ -53,16 +52,18 @@ public class PlayerDefenses : MonoBehaviour
 
             if (playerMovement.defenseLevel >= 2)
             {
-                if (dashTimer <= 0 && Input.GetKeyDown(KeyCode.LeftShift))
+                if (dashTimer <= 0 && Input.GetKeyDown(KeyCode.LeftShift) && playerMovement.currentFuel > 0)
                 {
                     if (Input.GetKey(KeyCode.D))
                     {
                         playerMovement.rb.AddForce(playerMovement.transform.right * dashForce, ForceMode2D.Impulse);
+                        playerMovement.currentFuel -= 8f;
                         dashTimer = dashRegenTime;
                     }
                     else if (Input.GetKey(KeyCode.A))
                     {
                         playerMovement.rb.AddForce(-playerMovement.transform.right * dashForce, ForceMode2D.Impulse);
+                        playerMovement.currentFuel -= 8f;
                         dashTimer = dashRegenTime;
                     }
                 }

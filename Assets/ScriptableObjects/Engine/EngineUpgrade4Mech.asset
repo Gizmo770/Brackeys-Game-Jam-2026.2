@@ -13,9 +13,8 @@ MonoBehaviour:
   m_Name: EngineUpgrade4Mech
   m_EditorClassIdentifier: Assembly-CSharp::EngineUpgrade
   partName: Mech Engine
-  description: Top Speed +25 / Acceleration +25 / Max Fuel +25
+  description: Top Speed +25 / Acceleration +25
   topSpeed: 30
   acceleration: 40
-  maxFuel: 200
   cost: 600
   sprite: {fileID: -7331260338386006276, guid: b4a1428a8cd04a845999a248a7767485, type: 3}

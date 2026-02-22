@@ -13,9 +13,8 @@ MonoBehaviour:
   m_Name: EngineUpgrade3Candy
   m_EditorClassIdentifier: Assembly-CSharp::EngineUpgrade
   partName: Candy Engine
-  description: Top Speed +15 / Acceleration +15 / Max Fuel +15
+  description: Top Speed +15 / Acceleration +15
   topSpeed: 20
   acceleration: 28
-  maxFuel: 125
   cost: 300
   sprite: {fileID: 3053293218918674147, guid: 5436fd0521a188f4ba7cbaae00a420fe, type: 3}

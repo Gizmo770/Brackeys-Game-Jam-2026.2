@@ -68,6 +68,7 @@ public class Backdrop : MonoBehaviour
         }
 
         planet.GetComponent<SpriteRenderer>().sprite = planetSprites[zone];
-        planet.transform.position = new Vector2(playerPosition.x + planetXOffset - (playerPosition.x / 10) + (planetXTravelDistance - (planetXTravelDistance * (zoneProgress * 2))), playerPosition.y + (planetTravelDistance - (planetTravelDistance * (zoneProgress * 2))));
+        float planetYOffset = planetTravelDistance - (planetTravelDistance * (zoneProgress * 2));
+        planet.transform.position = new Vector2(playerPosition.x + planetXOffset - (playerPosition.x / 10) + (planetXTravelDistance - (planetXTravelDistance * (zoneProgress * 2))), playerPosition.y + planetYOffset);
     }
 }

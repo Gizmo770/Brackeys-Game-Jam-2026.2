@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: HullUpgrade3Candy
   m_EditorClassIdentifier: Assembly-CSharp::HullUpgrade
   partName: Candy Hull
-  description: 'Speed Loss Multiplier: 50%'
+  description: '+150% fuel / Speed Loss Multiplier: 50%'
   speedLossMultiplier: 0.5
+  maxFuel: 125
   cost: 200
   sprite: {fileID: 1801566368626992035, guid: 5436fd0521a188f4ba7cbaae00a420fe, type: 3}

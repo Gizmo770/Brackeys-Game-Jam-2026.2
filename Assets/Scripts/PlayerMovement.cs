@@ -70,8 +70,6 @@ public class PlayerMovement : MonoBehaviour
         EngineUpgrade engine = ShipStats.engineUpgrade;
         topSpeed = engine.topSpeed;
         acceleration = engine.acceleration;
-        maxFuel = engine.maxFuel;
-        currentFuel = maxFuel;
         thrusterSprite.sprite = engine.sprite;
 
         FinUpgrade fins = ShipStats.finUpgrade;
@@ -83,6 +81,8 @@ public class PlayerMovement : MonoBehaviour
         HullUpgrade hull = ShipStats.hullUpgrade;
         speedLossMultiplier = ShipStats.hullUpgrade.speedLossMultiplier;
         hullSprite.sprite = hull.sprite;
+        maxFuel = hull.maxFuel;
+        currentFuel = maxFuel;
 
         DefenseUpgrade defense = ShipStats.defenseUpgrade;
         defenseSprite.sprite = defense.sprite;
@@ -148,15 +148,14 @@ public class PlayerMovement : MonoBehaviour
 
     public void ApplySpeedLossFromObstacle(float speedLost)
     {
-        Vector2 speedAfterLoss = rb.linearVelocity.normalized * (rb.linearVelocity.magnitude - (speedLost * speedLossMultiplier));
 
-        if (speedAfterLoss.magnitude <= minSpeed)
+        if ((rb.linearVelocity.magnitude - (speedLost * speedLossMultiplier) <= minSpeed))
         {
-            rb.linearVelocity = speedAfterLoss.normalized * minSpeed;
+            rb.linearVelocity = rb.linearVelocity.normalized * minSpeed;
         }
         else
         {
-            rb.linearVelocity = speedAfterLoss;
+            rb.linearVelocity = rb.linearVelocity.normalized * (rb.linearVelocity.magnitude - (speedLost * speedLossMultiplier));
         }
     }
 

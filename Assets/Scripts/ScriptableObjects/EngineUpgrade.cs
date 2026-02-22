@@ -7,7 +7,6 @@ public class EngineUpgrade : ScriptableObject
     public string description;
     public float topSpeed;
     public float acceleration;
-    public float maxFuel;
     public int cost;
     public Sprite sprite;
 }
