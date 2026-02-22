@@ -59,7 +59,7 @@ public class PlayerDefenses : MonoBehaviour
                     {
                         playerMovement.RightThrust();
                         playerMovement.rb.AddForce(playerMovement.transform.right * dashForce, ForceMode2D.Impulse);
-                        playerMovement.currentFuel -= 8f;
+                        playerMovement.currentFuel -= 4f;
                         dashTimer = dashRegenTime;
                         SfxManager.Instance.PlayBurstThrust();
                     }
@@ -67,7 +67,7 @@ public class PlayerDefenses : MonoBehaviour
                     {
                         playerMovement.LeftThrust();
                         playerMovement.rb.AddForce(-playerMovement.transform.right * dashForce, ForceMode2D.Impulse);
-                        playerMovement.currentFuel -= 8f;
+                        playerMovement.currentFuel -= 4f;
                         dashTimer = dashRegenTime;
                         SfxManager.Instance.PlayBurstThrust();
                     }

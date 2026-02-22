@@ -9,6 +9,7 @@ public class VolumeSlider : MonoBehaviour
     void Start()
     {
         slider = GetComponent<Slider>();
+        slider.value = AudioListener.volume;
     }
 
     // Update is called once per frame
