@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EngineUpgrade
   partName: Earth Engine
   description: Increases top speed, acceleration, and fuel.
-  topSpeed: 10
-  acceleration: 12
-  maxFuel: 5
+  topSpeed: 8
+  acceleration: 10
+  maxFuel: 10
   cost: 0
   sprite: {fileID: -2633907795195972977, guid: b7d3b59e973bd524da89f306c8bd8b8f, type: 3}

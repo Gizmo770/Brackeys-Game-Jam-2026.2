@@ -137,6 +137,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3185927882296573197}
   - component: {fileID: 7588108897190288791}
+  - component: {fileID: 6310990368392113381}
   - component: {fileID: 4587254151222678901}
   m_Layer: 0
   m_Name: Player
@@ -188,6 +189,43 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!70 &6310990368392113381
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5466060511804074907}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.6, y: 1.4}
+  m_Direction: 0
 --- !u!114 &4587254151222678901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,16 +238,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d7323877a5703c4e93b4dc1124c1c18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
+  dead: 0
   rb: {fileID: 0}
   canMove: 0
   topSpeed: 75
+  minSpeed: 2
+  speedLossMultiplier: 1
   acceleration: 12
   decceleration: 2
-  turnSpeed: 50
-  maxTurnSpeed: 50
   currentFuel: 100
   maxFuel: 100
   fuelConsumptionRate: 10
+  turnSpeed: 50
+  maxTurnSpeed: 50
   hullSprite: {fileID: 3375791860811920827}
   thrusterSprite: {fileID: 8765111706790444737}
   fin1Sprite: {fileID: 4407984105528516933}
