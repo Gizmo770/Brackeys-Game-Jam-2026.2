@@ -228,6 +228,7 @@ public class PlayerMovement : MonoBehaviour
             rb.rotation = launchAngle;
             yield return new WaitForSeconds(timeBeforeLaunch);
             rb.AddForce(rb.transform.up * launchSpeed, ForceMode2D.Impulse);
+            SfxManager.Instance.PlayLaunching();
             canMove = true;
             candyBoostMultiplier = 1.5f;
             StartCoroutine(ThrustEnum());

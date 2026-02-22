@@ -32,11 +32,13 @@ public class Obstacles : MonoBehaviour
         if (collision.tag == "Shield")
         {
             SfxManager.Instance.PlayBubblePop();
+            SfxManager.Instance.PlayHitObstacle();
             Destroy(collision.gameObject);
             Destroy(this.gameObject);
         }
         else if (collision.tag == "Player")
         {
+            SfxManager.Instance.PlayHitObstacle();
             PlayerMovement playerMovement = collision.GetComponent<PlayerMovement>();
 
             if(playerMovement.currentBubbleShield == null)

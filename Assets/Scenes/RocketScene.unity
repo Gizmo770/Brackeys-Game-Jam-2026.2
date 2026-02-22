@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 39410016}
   - component: {fileID: 39410017}
   - component: {fileID: 39410018}
+  - component: {fileID: 39410020}
   m_Layer: 5
   m_Name: AngleSlider
   m_TagString: Untagged
@@ -231,6 +232,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &39410020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 39410015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3353b9791dff77b41904520374f3e4ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1 &105483341
 GameObject:
   m_ObjectHideFlags: 0
@@ -242,6 +255,7 @@ GameObject:
   - component: {fileID: 105483342}
   - component: {fileID: 105483343}
   - component: {fileID: 105483344}
+  - component: {fileID: 105483345}
   m_Layer: 5
   m_Name: SpeedSlider
   m_TagString: Untagged
@@ -343,6 +357,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &105483345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 105483341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3353b9791dff77b41904520374f3e4ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayBounce
 --- !u!1 &110781106
 GameObject:
   m_ObjectHideFlags: 0
@@ -2669,7 +2695,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press Space to stop
+  m_text: Press Space to Stop
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a31d388b9b1ecb245b28cbb5349023ed, type: 2}
   m_sharedMaterial: {fileID: -1619954060881862806, guid: a31d388b9b1ecb245b28cbb5349023ed, type: 2}

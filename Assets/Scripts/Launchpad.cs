@@ -45,6 +45,7 @@ public class Launchpad : MonoBehaviour
             launchAngle = angleSlider.value;
             angleSet = true;
             speedSliderAnims.speed = speedSliderInitSpeed;
+            SfxManager.Instance.PlayMinigameDing();
             speedSliderAnims.SetTrigger("StartSpeedSlider");
         }
         else if (!speedSet && Input.GetKeyDown(KeyCode.Space))
@@ -56,6 +57,7 @@ public class Launchpad : MonoBehaviour
                 float normalized = distanceFromCenter / 5f;
                 launchSpeed = (1f - normalized) * playerMovement.topSpeed;
                 speedSet = true;
+                SfxManager.Instance.PlayMinigameDing();
 
                 // Initiate launch
                 StartCoroutine(playerMovement.Launch(launchAngle, launchSpeed, timeBeforeLaunch));
