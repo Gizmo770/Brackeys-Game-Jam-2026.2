@@ -136,6 +136,10 @@ public class PlayerMovement : MonoBehaviour
         if(candyBoostMultiplier > 1f)
         {
             candyBoostMultiplier -= Time.fixedDeltaTime * candyBoostDecayRate;
+            if(candyBoostMultiplier < 1)
+            {
+                candyBoostMultiplier = 1;
+            }
         }
     }
 

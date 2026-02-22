@@ -9939,7 +9939,7 @@ MonoBehaviour:
   minSpeed: 2
   speedLossMultiplier: 1
   acceleration: 12
-  decceleration: 2
+  decceleration: 2.5
   currentFuel: 100
   maxFuel: 100
   fuelConsumptionRate: 10
