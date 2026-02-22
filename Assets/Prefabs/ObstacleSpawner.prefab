@@ -45,16 +45,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObstacleSpawner
   zones:
-  - progressBetweenObstacles: 0.125
-    obstacles:
-    - {fileID: 4277317895291903220, guid: 53857209d5f45b44c8a126a461cff78f, type: 3}
   - progressBetweenObstacles: 0.1
     obstacles:
+    - {fileID: 4277317895291903220, guid: 53857209d5f45b44c8a126a461cff78f, type: 3}
+  - progressBetweenObstacles: 0.08
+    obstacles:
     - {fileID: 4277317895291903220, guid: 6ac23507b97c67e4e9476d8741ef6a5f, type: 3}
-  - progressBetweenObstacles: 0.075
+  - progressBetweenObstacles: 0.06
     obstacles:
     - {fileID: 4277317895291903220, guid: d2c21ee166d409e4195d8c2078553502, type: 3}
-  - progressBetweenObstacles: 0.05
+  - progressBetweenObstacles: 0.04
     obstacles:
     - {fileID: 4277317895291903220, guid: 790ddce4614759d40a4899d791f1f39b, type: 3}
   spawnXRange: 20
