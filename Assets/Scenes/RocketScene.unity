@@ -626,7 +626,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 734237387086634454, guid: e73af6cbe2407924299c75bc871752b5, type: 3}
       propertyPath: zones.Array.data[0].progressBetweenObstacles
-      value: 0.085
+      value: 0.08
       objectReference: {fileID: 0}
     - target: {fileID: 734237387086634454, guid: e73af6cbe2407924299c75bc871752b5, type: 3}
       propertyPath: zones.Array.data[1].progressBetweenObstacles
@@ -634,7 +634,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 734237387086634454, guid: e73af6cbe2407924299c75bc871752b5, type: 3}
       propertyPath: zones.Array.data[2].progressBetweenObstacles
-      value: 0.055
+      value: 0.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 734237387086634454, guid: e73af6cbe2407924299c75bc871752b5, type: 3}
+      propertyPath: zones.Array.data[3].progressBetweenObstacles
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 2690703220957167070, guid: e73af6cbe2407924299c75bc871752b5, type: 3}
       propertyPath: m_Name
@@ -5243,11 +5247,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 734237387086634454, guid: e73af6cbe2407924299c75bc871752b5, type: 3}
       propertyPath: zones.Array.data[2].progressBetweenObstacles
-      value: 0.25
+      value: 0.18
       objectReference: {fileID: 0}
     - target: {fileID: 734237387086634454, guid: e73af6cbe2407924299c75bc871752b5, type: 3}
       propertyPath: zones.Array.data[3].progressBetweenObstacles
-      value: 0.3
+      value: 0.18
       objectReference: {fileID: 0}
     - target: {fileID: 2690703220957167070, guid: e73af6cbe2407924299c75bc871752b5, type: 3}
       propertyPath: m_Name
@@ -5496,6 +5500,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1183814578}
+    - target: {fileID: 671475236596902225, guid: 007055247c16d3943b0656dd5800e647, type: 3}
+      propertyPath: zoneLength
+      value: 140
+      objectReference: {fileID: 0}
     - target: {fileID: 3465737409952155700, guid: 007055247c16d3943b0656dd5800e647, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
