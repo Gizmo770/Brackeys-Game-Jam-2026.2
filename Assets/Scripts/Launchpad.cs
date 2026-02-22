@@ -25,6 +25,7 @@ public class Launchpad : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        SfxManager.Instance.FadeInSpaceTheme();
         angleSliderAnims.speed = angleSliderInitSpeed;
 
         if(playerMovement == null)

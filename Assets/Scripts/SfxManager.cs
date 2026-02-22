@@ -5,13 +5,13 @@ public class SfxManager : MonoBehaviour
     public float fadeOutDuration = 1f;
 
     public float defaultShopThemeVolume = 1f;
-    public bool fadeInShopTheme = false;
+    private bool fadeInShopTheme = false;
 
     public float defaultSpaceThemeVolume = 1f;
-    public bool fadeInSpaceTheme = false;
+    private bool fadeInSpaceTheme = false;
 
     public float defaultThrustingVolume = 1f;
-    public bool fadeInThrusting = false;
+    private bool fadeInThrusting = false;
 
     public AudioSource bubblePop;
     public AudioSource bubbleRegenerate;
@@ -98,4 +98,34 @@ public class SfxManager : MonoBehaviour
     public void PlayShopThemeAirportLounge() => shopThemeAirportLounge.Play();
     public void PlaySpaceThemeMesmerizingGalaxyLoop() => spaceThemeMesmerizingGalaxyLoop.Play();
     public void PlayThrustingLooping() => thrustingLooping.Play();
+
+    public void FadeOutShopTheme()
+    {
+        SfxManager.Instance.fadeInShopTheme = false;
+    }
+
+    public void FadeInShopTheme()
+    {
+        SfxManager.Instance.fadeInShopTheme = true;
+    }
+
+    public void FadeOutSpaceTheme()
+    {
+        SfxManager.Instance.fadeInSpaceTheme = false;
+    }
+
+    public void FadeInSpaceTheme()
+    {
+        SfxManager.Instance.fadeInSpaceTheme = true;
+    }
+
+    public void FadeOutThrusters()
+    {
+        SfxManager.Instance.fadeInThrusting = false;
+    }
+
+    public void FadeInThrusters()
+    {
+        SfxManager.Instance.fadeInThrusting = true;
+    }
 }

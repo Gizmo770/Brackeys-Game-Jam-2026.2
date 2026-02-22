@@ -108,6 +108,7 @@ public class PlayerMovement : MonoBehaviour
             if (!launchParticle)
             {
                 thrustParticle.Play();
+                SfxManager.Instance.FadeInThrusters();
             }
         }
         else
@@ -124,6 +125,7 @@ public class PlayerMovement : MonoBehaviour
             if (!launchParticle)
             {
                 thrustParticle.Stop();
+                SfxManager.Instance.FadeOutThrusters();
             }
         }
 
@@ -239,8 +241,10 @@ public class PlayerMovement : MonoBehaviour
     {
         launchParticle = true;
         thrustParticle.Play();
+        SfxManager.Instance.FadeInThrusters();
         yield return new WaitForSeconds(.5f);
         thrustParticle.Stop();
+        SfxManager.Instance.FadeOutThrusters();
         launchParticle = false;
     }
 }
