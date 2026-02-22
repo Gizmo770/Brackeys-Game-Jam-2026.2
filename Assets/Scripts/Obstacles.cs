@@ -31,6 +31,7 @@ public class Obstacles : MonoBehaviour
     {
         if (collision.tag == "Shield")
         {
+            SfxManager.Instance.PlayBubblePop();
             Destroy(collision.gameObject);
             Destroy(this.gameObject);
         }

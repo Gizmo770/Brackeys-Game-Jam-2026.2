@@ -32,6 +32,7 @@ public class BoostPickup : MonoBehaviour
                     {
                         GameObject bubble
                             = Instantiate(bubbleGameObject, playerMovement.transform);
+                        SfxManager.Instance.PlayBubbleRegenerate();
                         playerMovement.currentBubbleShield = bubble;
                     }
                     break;

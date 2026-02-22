@@ -43,6 +43,7 @@ public class UpgradeSystem : MonoBehaviour
                 gameManager.EquipUpgrade(upgradeType, currentIndex);
             }
             RefreshUI();
+            SfxManager.Instance.PlayButtonDown();
         }
     }
 
@@ -57,6 +58,7 @@ public class UpgradeSystem : MonoBehaviour
                 gameManager.EquipUpgrade(upgradeType, currentIndex);
             }
             RefreshUI();
+            SfxManager.Instance.PlayButtonDown();
         }
     }
 

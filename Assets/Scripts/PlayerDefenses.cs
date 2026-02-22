@@ -45,6 +45,7 @@ public class PlayerDefenses : MonoBehaviour
                     {
                         shieldTimer = shieldRegenTime;
                         GameObject bubble = Instantiate(bubbleGameObject, playerMovement.transform);
+                        SfxManager.Instance.PlayBubbleRegenerate();
                         playerMovement.currentBubbleShield = bubble;
                     }
                 }
@@ -60,6 +61,7 @@ public class PlayerDefenses : MonoBehaviour
                         playerMovement.rb.AddForce(playerMovement.transform.right * dashForce, ForceMode2D.Impulse);
                         playerMovement.currentFuel -= 8f;
                         dashTimer = dashRegenTime;
+                        SfxManager.Instance.PlayBurstThrust();
                     }
                     else if (Input.GetKey(KeyCode.A))
                     {
@@ -67,6 +69,7 @@ public class PlayerDefenses : MonoBehaviour
                         playerMovement.rb.AddForce(-playerMovement.transform.right * dashForce, ForceMode2D.Impulse);
                         playerMovement.currentFuel -= 8f;
                         dashTimer = dashRegenTime;
+                        SfxManager.Instance.PlayBurstThrust();
                     }
                 }
                 else

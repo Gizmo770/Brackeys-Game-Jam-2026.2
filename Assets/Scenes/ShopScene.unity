@@ -2255,7 +2255,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1595879226}
         m_TargetAssemblyTypeName: SceneTransition, Assembly-CSharp
-        m_MethodName: TriggerSceneChange
+        m_MethodName: TriggerSceneChangeButton
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
