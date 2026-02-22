@@ -30,6 +30,7 @@ public class UpgradeSystem : MonoBehaviour
         lastRunStats.GameObject().SetActive(true);
         currentIndex = SetStartingIndex();
         RefreshUI();
+        NextUpgrade();
     }
 
     public void PrevUpgrade()
