@@ -11,4 +11,9 @@ public class MainMenu : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void StopSpaceTheme()
+    {
+        SfxManager.Instance.FadeOutSpaceTheme();
+    }
 }
