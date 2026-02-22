@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class ProgressTracker : MonoBehaviour
 {
+    private bool iWinGame = false;
+
     public float zoneLength;
 
     public GameObject player;
@@ -26,6 +28,10 @@ public class ProgressTracker : MonoBehaviour
 
     private void WinGame()
     {
-        Object.FindFirstObjectByType<SceneTransition>().TriggerSceneChangeWhite("VictoryScene");
+        if(!iWinGame)
+        {
+            iWinGame = true;
+            Object.FindFirstObjectByType<SceneTransition>().TriggerSceneChangeWhite("VictoryScene");
+        }
     }
 }

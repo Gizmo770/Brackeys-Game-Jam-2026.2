@@ -20,8 +20,8 @@ public class SceneTransition : MonoBehaviour
 
     public void TriggerSceneChangeWhite(string sceneToChangeTo)
     {
-        SfxManager.Instance.PlayButtonDown();
         this.nextScene = sceneToChangeTo;
+        animator.SetTrigger("SceneTransOutWhite");
     }
 
     public void LoadNextScene()
