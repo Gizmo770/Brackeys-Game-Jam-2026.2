@@ -77,6 +77,10 @@ public class UpgradeSystem : MonoBehaviour
             shopSystem.UpdateMoneyText();
             RefreshUI();
         }
+        else
+        {
+           SfxManager.Instance.PlayError();
+        }
     }
 
     private int GetCurrentCost()
