@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: EngineUpgrade2Fish
   m_EditorClassIdentifier: Assembly-CSharp::EngineUpgrade
   partName: Fish Engine
-  description: Top Speed +5 / Acceleration +5
+  description: Top Speed +6 / Acceleration +8
   topSpeed: 14
   acceleration: 18
   cost: 100

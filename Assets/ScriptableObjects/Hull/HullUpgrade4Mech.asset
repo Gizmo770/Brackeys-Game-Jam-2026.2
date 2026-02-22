@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: HullUpgrade4Mech
   m_EditorClassIdentifier: Assembly-CSharp::HullUpgrade
   partName: Mech Hull
-  description: '+400% fuel / Speed Loss Multiplier: 15%'
-  speedLossMultiplier: 0.15
+  description: '+400% fuel / Speed Loss Multiplier: 25%'
+  speedLossMultiplier: 0.25
   maxFuel: 200
   cost: 500
   sprite: {fileID: 7770620908168572785, guid: b4a1428a8cd04a845999a248a7767485, type: 3}
