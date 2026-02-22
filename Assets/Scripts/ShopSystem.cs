@@ -14,6 +14,8 @@ public class ShopSystem : MonoBehaviour
 
     private void Start()
     {
+        SfxManager.Instance.FadeInShopTheme();
+
         // Updates Shop UI for last run stats.
         gameManager = GameManager.Instance;
         UpdateMoneyText();

@@ -77,6 +77,7 @@ public class UpgradeSystem : MonoBehaviour
             gameManager.EquipUpgrade(upgradeType, currentIndex);
             shopSystem.UpdateMoneyText();
             RefreshUI();
+            SfxManager.Instance.PlayPurchase();
         }
         else
         {

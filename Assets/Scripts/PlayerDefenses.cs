@@ -88,6 +88,7 @@ public class PlayerDefenses : MonoBehaviour
                         if (hit && hit.collider.tag == "Enemy")
                         {
                             Instantiate(blasterGameObject, (Vector2)playerMovement.transform.position + blasterOffset, playerMovement.transform.rotation);
+                            SfxManager.Instance.PlayLaser();
                             blasterTimer = blasterTime;
                             break;
                         }

@@ -25,6 +25,7 @@ public class Launchpad : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        SfxManager.Instance.FadeInSpaceTheme();
         angleSliderAnims.speed = angleSliderInitSpeed;
 
         if(playerMovement == null)
@@ -45,6 +46,7 @@ public class Launchpad : MonoBehaviour
             launchAngle = angleSlider.value;
             angleSet = true;
             speedSliderAnims.speed = speedSliderInitSpeed;
+            SfxManager.Instance.PlayMinigameDing();
             speedSliderAnims.SetTrigger("StartSpeedSlider");
         }
         else if (!speedSet && Input.GetKeyDown(KeyCode.Space))
@@ -56,6 +58,7 @@ public class Launchpad : MonoBehaviour
                 float normalized = distanceFromCenter / 5f;
                 launchSpeed = (1f - normalized) * playerMovement.topSpeed;
                 speedSet = true;
+                SfxManager.Instance.PlayMinigameDing();
 
                 // Initiate launch
                 StartCoroutine(playerMovement.Launch(launchAngle, launchSpeed, timeBeforeLaunch));

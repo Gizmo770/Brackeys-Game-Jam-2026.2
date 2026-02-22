@@ -49,6 +49,7 @@ public class GameManager : MonoBehaviour
                 CalculateLastRunStats();
                 GetMoney();
                 FindFirstObjectByType<SceneTransition>().TriggerSceneChange("ShopScene");
+                SfxManager.Instance.FadeOutSpaceTheme();
             }
         }
     }

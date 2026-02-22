@@ -108,6 +108,7 @@ public class PlayerMovement : MonoBehaviour
             if (!launchParticle)
             {
                 thrustParticle.Play();
+                SfxManager.Instance.FadeInThrusters();
             }
         }
         else
@@ -124,6 +125,7 @@ public class PlayerMovement : MonoBehaviour
             if (!launchParticle)
             {
                 thrustParticle.Stop();
+                SfxManager.Instance.FadeOutThrusters();
             }
         }
 
@@ -228,6 +230,7 @@ public class PlayerMovement : MonoBehaviour
             rb.rotation = launchAngle;
             yield return new WaitForSeconds(timeBeforeLaunch);
             rb.AddForce(rb.transform.up * launchSpeed, ForceMode2D.Impulse);
+            SfxManager.Instance.PlayLaunching();
             canMove = true;
             candyBoostMultiplier = 1.5f;
             StartCoroutine(ThrustEnum());
@@ -238,8 +241,10 @@ public class PlayerMovement : MonoBehaviour
     {
         launchParticle = true;
         thrustParticle.Play();
+        SfxManager.Instance.FadeInThrusters();
         yield return new WaitForSeconds(.5f);
         thrustParticle.Stop();
+        SfxManager.Instance.FadeOutThrusters();
         launchParticle = false;
     }
 }

@@ -20,6 +20,7 @@ public class BoostPickup : MonoBehaviour
         if (collision.tag == "Player")
         {
             PlayerMovement playerMovement = collision.GetComponent<PlayerMovement>();
+            SfxManager.Instance.PlayPowerUp();
 
             switch (boostType)
             {
