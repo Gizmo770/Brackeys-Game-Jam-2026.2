@@ -79,7 +79,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -2
+  m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -139,6 +139,7 @@ GameObject:
   - component: {fileID: 7588108897190288791}
   - component: {fileID: 6310990368392113381}
   - component: {fileID: 4587254151222678901}
+  - component: {fileID: 1956546269406528046}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -249,6 +250,10 @@ MonoBehaviour:
   currentFuel: 100
   maxFuel: 100
   fuelConsumptionRate: 10
+  currentBubbleShield: {fileID: 0}
+  candyBoostMultiplier: 1
+  candyBoostDecayRate: 0.5
+  defenseLevel: 0
   turnSpeed: 50
   maxTurnSpeed: 50
   hullSprite: {fileID: 3375791860811920827}
@@ -256,6 +261,25 @@ MonoBehaviour:
   fin1Sprite: {fileID: 4407984105528516933}
   fin2Sprite: {fileID: 7179793382566367117}
   defenseSprite: {fileID: 3116062089438229573}
+--- !u!114 &1956546269406528046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5466060511804074907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f8e1da00a3355b44ab9214c63e49264, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerDefenses
+  shieldRegenTime: 6
+  bubbleGameObject: {fileID: 4589360078272909763, guid: d81cd0b0a8c19924da72b6c5ce848c2e, type: 3}
+  dashForce: 20
+  dashRegenTime: 3
+  blasterOffset: {x: 0.515, y: 0.75}
+  blasterTime: 2
+  blasterGameObject: {fileID: 3845604647769928855, guid: 282f6f026aafb1c4e9306968fa6620dc, type: 3}
 --- !u!1 &6375039720267844209
 GameObject:
   m_ObjectHideFlags: 0

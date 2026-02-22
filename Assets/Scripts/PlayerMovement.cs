@@ -27,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
     [HideInInspector] public GameObject currentBubbleShield;
     [HideInInspector] public float candyBoostMultiplier = 1f;
     public float candyBoostDecayRate = .5f;
+    [HideInInspector] public float defenseLevel = 0f;
 
     [Header("Fins")]
     public float turnSpeed;
@@ -85,7 +86,8 @@ public class PlayerMovement : MonoBehaviour
 
         DefenseUpgrade defense = ShipStats.defenseUpgrade;
         defenseSprite.sprite = defense.sprite;
-        //appliedDefensePrefab = defense.countermeasurePrefab;
+        defenseLevel = defense.defenseLevel;
+
     }
 
     private void Thrust()

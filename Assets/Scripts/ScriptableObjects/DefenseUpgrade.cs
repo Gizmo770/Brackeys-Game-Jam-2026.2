@@ -5,7 +5,7 @@ public class DefenseUpgrade : ScriptableObject
 {
     public string partName;
     public string description;
-    public GameObject countermeasurePrefab;
+    public int defenseLevel;
     public int cost;
     public Sprite sprite;
 }

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbb29959482f23245905bee547620fbd, type: 3}
   m_Name: DefenseUpgrade1Earth
   m_EditorClassIdentifier: Assembly-CSharp::DefenseUpgrade
-  partName: Earth Defense
+  partName: None
   description: No countermeasures.
-  countermeasurePrefab: {fileID: 0}
+  defenseLevel: 0
   cost: 0
   sprite: {fileID: 0}

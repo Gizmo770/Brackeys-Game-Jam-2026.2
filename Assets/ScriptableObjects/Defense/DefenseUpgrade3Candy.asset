@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbb29959482f23245905bee547620fbd, type: 3}
   m_Name: DefenseUpgrade3Candy
   m_EditorClassIdentifier: Assembly-CSharp::DefenseUpgrade
-  partName: Candy Defense
-  description: No countermeasures.
-  countermeasurePrefab: {fileID: 0}
-  cost: 0
-  sprite: {fileID: 0}
+  partName: Soda Dash
+  description: Adds soda thrusters that let you dash to the side every 3 seconds.
+  defenseLevel: 2
+  cost: 250
+  sprite: {fileID: 21300000, guid: 29b67998ad54a894082358356f9c1b74, type: 3}
