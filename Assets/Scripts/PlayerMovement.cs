@@ -24,6 +24,9 @@ public class PlayerMovement : MonoBehaviour
     public float currentFuel = 0f;
     public float maxFuel = 100f;
     public float fuelConsumptionRate = 10f;
+    [HideInInspector] public GameObject currentBubbleShield;
+    [HideInInspector] public float candyBoostMultiplier = 1f;
+    public float candyBoostDecayRate = .5f;
 
     [Header("Fins")]
     public float turnSpeed;
@@ -44,6 +47,7 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         canMove = false;
         launchStarted = false;
+        candyBoostMultiplier = 1f;
 
         RecalculateAppliedStats();
     }
@@ -66,6 +70,7 @@ public class PlayerMovement : MonoBehaviour
         topSpeed = engine.topSpeed;
         acceleration = engine.acceleration;
         maxFuel = engine.maxFuel;
+        currentFuel = maxFuel;
         thrusterSprite.sprite = engine.sprite;
 
         FinUpgrade fins = ShipStats.finUpgrade;
@@ -104,9 +109,14 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // Speed limiter
-        if (rb.linearVelocity.magnitude > topSpeed)
+        if (rb.linearVelocity.magnitude > topSpeed * candyBoostMultiplier)
         {
             rb.linearVelocity = rb.linearVelocity.normalized * topSpeed;
+        }
+
+        if(candyBoostMultiplier > 1f)
+        {
+            candyBoostMultiplier -= Time.fixedDeltaTime * candyBoostDecayRate;
         }
     }
 
@@ -145,6 +155,22 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             rb.linearVelocity = speedAfterLoss;
+        }
+    }
+
+    public void ApplySpeedBoost(float speedBoostAmount, float candyBoostMultiplier)
+    {
+        this.candyBoostMultiplier = candyBoostMultiplier;
+        rb.AddForce(rb.transform.up * speedBoostAmount, ForceMode2D.Impulse);
+    }
+
+    public void ApplyFuelPercentBoost(float percentFuelBoost)
+    {
+        currentFuel += maxFuel * percentFuelBoost;
+
+        if(currentFuel > maxFuel)
+        {
+            currentFuel = maxFuel;
         }
     }
 

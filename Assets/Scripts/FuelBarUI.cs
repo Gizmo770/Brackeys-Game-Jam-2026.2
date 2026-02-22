@@ -11,14 +11,12 @@ public class FuelBarUI : MonoBehaviour
     {
         playerMovement = Object.FindFirstObjectByType<PlayerMovement>();
         fuelSlider = GetComponentInChildren<Slider>();
-
-        fuelSlider.maxValue = playerMovement.maxFuel;
-        fuelSlider.value = fuelSlider.maxValue;
     }
 
     // Update is called once per frame
     void Update()
     {
+        fuelSlider.maxValue = playerMovement.maxFuel;
         fuelSlider.value = playerMovement.currentFuel;
     }
 }

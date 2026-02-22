@@ -26,12 +26,20 @@ public class Obstacles : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Player")
+        if (collision.tag == "Shield")
+        {
+            Destroy(collision.gameObject);
+            Destroy(this.gameObject);
+        }
+        else if (collision.tag == "Player")
         {
             PlayerMovement playerMovement = collision.GetComponent<PlayerMovement>();
 
-            playerMovement.ApplySpeedLossFromObstacle(speedLoss);
-            Destroy(gameObject);
+            if(playerMovement.currentBubbleShield == null)
+            {
+                playerMovement.ApplySpeedLossFromObstacle(speedLoss);
+                Destroy(gameObject);
+            }
         }
     }
 }
