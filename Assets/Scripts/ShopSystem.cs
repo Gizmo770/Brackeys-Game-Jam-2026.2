@@ -15,12 +15,12 @@ public class ShopSystem : MonoBehaviour
     private void Start()
     {
         // Updates Shop UI for last run stats.
-        gameManager = Object.FindAnyObjectByType<GameManager>();
+        gameManager = GameManager.Instance;
         UpdateMoneyText();
         cashEarnedText.text 
-            = "Cash Earned: $" + gameManager.distanceToNextBiome.ToString();
+            = "Cash Earned: $" + gameManager.moneyGainedLastRun.ToString();
         verticalDistanceText.text 
-            = "Vertical Travelled: " + gameManager.verticalDistanceTraveled.ToString();
+            = "Vertical Travelled: " + Mathf.FloorToInt(gameManager.verticalDistanceTraveled) + "m";
         obstaclesDestroyedText.text
             = "Obstacles Destroyed: " + gameManager.obstaclesDestroyed.ToString();
     }

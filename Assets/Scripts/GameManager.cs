@@ -6,8 +6,10 @@ public class GameManager : MonoBehaviour
     private PlayerMovement playerMovement;
 
     public static GameManager Instance { get; private set; }
-    public int money = 400;
 
+    [Header("Money")]
+    public int money = 400;
+    public float moneyGainPerDistance = 0.5f;
 
     //Used to hold list of available upgrades for the shop.
     public Items items;
@@ -20,7 +22,7 @@ public class GameManager : MonoBehaviour
     public List<int> ownedDefenseUpgrades = new();
 
     [Header("Last Run Tracker Stats")]
-    public float distanceToNextBiome;
+    public int moneyGainedLastRun;
     public float verticalDistanceTraveled;
     public int obstaclesDestroyed;
 
@@ -41,12 +43,21 @@ public class GameManager : MonoBehaviour
         // Player loss condition
         if(playerMovement != null)
         {
-            if(playerMovement.currentFuel <= 0 && playerMovement.rb.linearVelocity.magnitude <= .05f)
+            if(!playerMovement.dead && playerMovement.currentFuel <= 0 && playerMovement.rb.linearVelocity.magnitude <= .05f)
             {
+                playerMovement.dead = true;
                 CalculateLastRunStats();
+                GetMoney();
                 FindFirstObjectByType<SceneTransition>().TriggerSceneChange("ShopScene");
             }
         }
+    }
+
+    private void GetMoney()
+    {
+        moneyGainedLastRun = Mathf.FloorToInt(
+            verticalDistanceTraveled * moneyGainPerDistance);
+        money += moneyGainedLastRun;
     }
 
     public void EnsureBaseOwned()
@@ -143,9 +154,6 @@ public class GameManager : MonoBehaviour
 
     private void CalculateLastRunStats()
     {
-
-        // TODO: Do calculations for distance to next biome.
-
         // Calculate the vertical distance from the launchpad to the player
         Transform launchPad = Object.FindFirstObjectByType<Launchpad>().transform;
         verticalDistanceTraveled = playerMovement.transform.position.y - launchPad.position.y;

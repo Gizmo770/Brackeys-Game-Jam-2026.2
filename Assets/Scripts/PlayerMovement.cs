@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     public static ShipStats ShipStats;
+    public bool dead;
 
     [HideInInspector]
     public Rigidbody2D rb;
