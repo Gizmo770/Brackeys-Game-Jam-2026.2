@@ -18,6 +18,12 @@ public class SceneTransition : MonoBehaviour
         animator.SetTrigger("SceneTransOut");
     }
 
+    public void TriggerSceneChangeWhite(string sceneToChangeTo)
+    {
+        this.nextScene = sceneToChangeTo;
+        animator.SetTrigger("SceneTransOutWhite");
+    }
+
     public void LoadNextScene()
     {
        SceneManager.LoadScene(nextScene);
