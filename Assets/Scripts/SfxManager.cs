@@ -2,15 +2,100 @@ using UnityEngine;
 
 public class SfxManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public float fadeOutDuration = 1f;
+
+    public float defaultShopThemeVolume = 1f;
+    public bool fadeInShopTheme = false;
+
+    public float defaultSpaceThemeVolume = 1f;
+    public bool fadeInSpaceTheme = false;
+
+    public float defaultThrustingVolume = 1f;
+    public bool fadeInThrusting = false;
+
+    public AudioSource bubblePop;
+    public AudioSource bubbleRegenerate;
+    public AudioSource burstThrust;
+    public AudioSource buttonDown;
+    public AudioSource error;
+    public AudioSource hitObstacle;
+    public AudioSource laser;
+    public AudioSource launching;
+    public AudioSource minigameBounce;
+    public AudioSource minigameDing;
+    public AudioSource powerUp;
+    public AudioSource purchase;
+    public AudioSource shopThemeAirportLounge;
+    public AudioSource spaceThemeMesmerizingGalaxyLoop;
+    public AudioSource thrustingLooping;
+
+    public static SfxManager Instance { get; private set; }
+
+    private void Awake()
     {
-        
+        if (Instance != null && Instance != this) { Destroy(gameObject); return; }
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        // Shop Theme
+        if (!fadeInShopTheme)
+        {
+            shopThemeAirportLounge.volume -= Time.deltaTime;
+        }
+        if (fadeInShopTheme)
+        {
+            shopThemeAirportLounge.volume += Time.deltaTime;
+            if (shopThemeAirportLounge.volume >= defaultShopThemeVolume)
+            {
+                shopThemeAirportLounge.volume = defaultShopThemeVolume;
+            }
+        }
+
+        // Space Theme
+        if (!fadeInSpaceTheme)
+        {
+            spaceThemeMesmerizingGalaxyLoop.volume -= Time.deltaTime;
+        }
+        if (fadeInSpaceTheme)
+        {
+            spaceThemeMesmerizingGalaxyLoop.volume += Time.deltaTime;
+            if (spaceThemeMesmerizingGalaxyLoop.volume >= defaultSpaceThemeVolume)
+            {
+                spaceThemeMesmerizingGalaxyLoop.volume = defaultSpaceThemeVolume;
+            }
+        }
+
+        // Thrusting Looping
+        if (!fadeInThrusting)
+        {
+            thrustingLooping.volume -= Time.deltaTime;
+        }
+        if (fadeInThrusting)
+        {
+            thrustingLooping.volume += Time.deltaTime;
+            if (thrustingLooping.volume >= defaultThrustingVolume)
+            {
+                thrustingLooping.volume = defaultThrustingVolume;
+            }
+        }
     }
+
+    public void PlayBubblePop() => bubblePop.Play();
+    public void PlayBubbleRegenerate() => bubbleRegenerate.Play();
+    public void PlayBurstThrust() => burstThrust.Play();
+    public void PlayButtonDown() => buttonDown.Play();
+    public void PlayError() => error.Play();
+    public void PlayHitObstacle() => hitObstacle.Play();
+    public void PlayLaser() => laser.Play();
+    public void PlayLaunching() => launching.Play();
+    public void PlayMinigameBounce() => minigameBounce.Play();
+    public void PlayMinigameDing() => minigameDing.Play();
+    public void PlayPowerUp() => powerUp.Play();
+    public void PlayPurchase() => purchase.Play();
+    public void PlayShopThemeAirportLounge() => shopThemeAirportLounge.Play();
+    public void PlaySpaceThemeMesmerizingGalaxyLoop() => spaceThemeMesmerizingGalaxyLoop.Play();
+    public void PlayThrustingLooping() => thrustingLooping.Play();
 }
