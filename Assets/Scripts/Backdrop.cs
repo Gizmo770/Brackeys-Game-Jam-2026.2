@@ -49,6 +49,10 @@ public class Backdrop : MonoBehaviour
         int zone = progressTracker.zone;
         float zoneProgress = progressTracker.zoneProgress;
 
+        if(progressTracker.zone >= 4)
+        {
+            return;
+        }
         Color tintColor = new Color(tintColors[zone].r, tintColors[zone].g, tintColors[zone].b, tintColors[zone].a * (1 - Mathf.Abs(.5f - zoneProgress) * 2));
         foreach (SpriteRenderer tint in tints)
         {

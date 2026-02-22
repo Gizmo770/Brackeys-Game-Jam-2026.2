@@ -13,7 +13,10 @@ public class Obstacles : MonoBehaviour
 
     void Start()
     {
-        GetComponentInChildren<SpriteRenderer>().sprite = sprites[Random.Range(0, sprites.Count)];
+        if(sprites.Count > 0)
+        {
+            GetComponentInChildren<SpriteRenderer>().sprite = sprites[Random.Range(0, sprites.Count)];
+        }
         rotateDirection = Random.Range(1,2) == 0 ? 1 : -1;
         moveDirection = Random.insideUnitCircle.normalized;
     }

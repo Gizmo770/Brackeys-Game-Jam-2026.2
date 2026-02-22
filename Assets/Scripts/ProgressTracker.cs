@@ -18,10 +18,7 @@ public class ProgressTracker : MonoBehaviour
         zone = playerPosition.y > 0 ? Mathf.FloorToInt(playerPosition.y / zoneLength) : 0;
         zoneProgress = playerPosition.y > 0 ? (playerPosition.y % zoneLength) / zoneLength : 0;
 
-        // If zoneProgress = 4, start a win game.
-        // Fade to white, win game scene.
-        // Pretty it up, button to return to main menu.
-        if(zoneProgress >= 4)
+        if(zone >= 4)
         {
             WinGame();
         }

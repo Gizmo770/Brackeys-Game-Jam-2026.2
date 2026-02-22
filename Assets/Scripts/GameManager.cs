@@ -160,9 +160,4 @@ public class GameManager : MonoBehaviour
 
         // TODO: Do calculations for obstacles destroyed.
     }
-
-    public void GoToRocketScene()
-    {
-       FindFirstObjectByType<SceneTransition>().TriggerSceneChange("RocketScene");
-    }
 }
