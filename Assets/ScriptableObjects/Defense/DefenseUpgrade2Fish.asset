@@ -15,5 +15,5 @@ MonoBehaviour:
   partName: Bubble Shield
   description: Generates a bubble shield that protects you every 6 seconds.
   defenseLevel: 1
-  cost: 125
+  cost: 75
   sprite: {fileID: 21300000, guid: a70c98256b5ac3746a340f30d4c85d7c, type: 3}

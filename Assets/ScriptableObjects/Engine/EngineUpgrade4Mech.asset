@@ -16,5 +16,5 @@ MonoBehaviour:
   description: Top Speed +25 / Acceleration +25
   topSpeed: 30
   acceleration: 40
-  cost: 600
+  cost: 400
   sprite: {fileID: -7331260338386006276, guid: b4a1428a8cd04a845999a248a7767485, type: 3}

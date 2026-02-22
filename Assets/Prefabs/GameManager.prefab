@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   money: 0
-  moneyGainPerDistance: 0.5
+  moneyGainPerDistance: 1
   items: {fileID: 11400000, guid: 818dcf31af00a2d4ca8b48c2cfd627a8, type: 2}
   ownedEngineUpgrades: 
   ownedFinUpgrades: 

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 928afd2140e237d4e865c2950d43f180, type: 3}
   m_Name: FinUpgrade1Earth
   m_EditorClassIdentifier: Assembly-CSharp::FinUpgrade
-  partName: Earth Fin
+  partName: Basic Fin
   description: Increases turn speed.
   maxTurnSpeed: 3
   cost: 0

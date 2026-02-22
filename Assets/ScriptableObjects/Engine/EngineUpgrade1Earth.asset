@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae32a1e4b2482b2489161d0c3019073d, type: 3}
   m_Name: EngineUpgrade1Earth
   m_EditorClassIdentifier: Assembly-CSharp::EngineUpgrade
-  partName: Earth Engine
+  partName: Basic Engine
   description: Increases top speed and acceleration
   topSpeed: 8
   acceleration: 10
