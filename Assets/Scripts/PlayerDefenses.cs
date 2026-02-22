@@ -56,12 +56,14 @@ public class PlayerDefenses : MonoBehaviour
                 {
                     if (Input.GetKey(KeyCode.D))
                     {
+                        playerMovement.RightThrust();
                         playerMovement.rb.AddForce(playerMovement.transform.right * dashForce, ForceMode2D.Impulse);
                         playerMovement.currentFuel -= 8f;
                         dashTimer = dashRegenTime;
                     }
                     else if (Input.GetKey(KeyCode.A))
                     {
+                        playerMovement.LeftThrust();
                         playerMovement.rb.AddForce(-playerMovement.transform.right * dashForce, ForceMode2D.Impulse);
                         playerMovement.currentFuel -= 8f;
                         dashTimer = dashRegenTime;

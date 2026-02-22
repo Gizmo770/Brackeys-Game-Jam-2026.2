@@ -28,6 +28,9 @@ public class PlayerMovement : MonoBehaviour
     [HideInInspector] public float candyBoostMultiplier = 1f;
     public float candyBoostDecayRate = .5f;
     [HideInInspector] public float defenseLevel = 0f;
+    public ParticleSystem thrustParticle;
+    public ParticleSystem leftThrustParticle;
+    public ParticleSystem rightThrustParticle;
 
     [Header("Fins")]
     public float turnSpeed;
@@ -39,6 +42,8 @@ public class PlayerMovement : MonoBehaviour
     public SpriteRenderer fin1Sprite;
     public SpriteRenderer fin2Sprite;
     public SpriteRenderer defenseSprite;
+
+    private bool launchParticle;
 
     // Start is called before the first frame update
     void Start()
@@ -62,6 +67,10 @@ public class PlayerMovement : MonoBehaviour
         {
             Thrust();
             Rotation();
+        }
+        else
+        {
+            thrustParticle.Stop();
         }
     }
 
@@ -97,6 +106,11 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.AddForce(rb.transform.up * acceleration, ForceMode2D.Force);
             DrainFuel();
+
+            if (!launchParticle)
+            {
+                thrustParticle.Play();
+            }
         }
         else
         {            
@@ -107,6 +121,11 @@ public class PlayerMovement : MonoBehaviour
             else
             {
                 rb.AddForce(-rb.linearVelocity.normalized * decceleration, ForceMode2D.Force);
+            }
+
+            if (!launchParticle)
+            {
+                thrustParticle.Stop();
             }
         }
 
@@ -120,6 +139,30 @@ public class PlayerMovement : MonoBehaviour
         {
             candyBoostMultiplier -= Time.fixedDeltaTime * candyBoostDecayRate;
         }
+    }
+
+    public void LeftThrust()
+    {
+        StartCoroutine(LeftThrustEnum());
+    }
+
+    private IEnumerator LeftThrustEnum()
+    {
+        leftThrustParticle.Play();
+        yield return new WaitForSeconds(.3f);
+        leftThrustParticle.Stop();
+    }
+
+    public void RightThrust()
+    {
+        StartCoroutine(RightThrustEnum());
+    }
+
+    private IEnumerator RightThrustEnum()
+    {
+        rightThrustParticle.Play();
+        yield return new WaitForSeconds(.3f);
+        rightThrustParticle.Stop();
     }
 
     private void Rotation()
@@ -184,6 +227,16 @@ public class PlayerMovement : MonoBehaviour
             yield return new WaitForSeconds(timeBeforeLaunch);
             rb.AddForce(rb.transform.up * launchSpeed, ForceMode2D.Impulse);
             canMove = true;
+            StartCoroutine(ThrustEnum());
         }
+    }
+
+    private IEnumerator ThrustEnum()
+    {
+        launchParticle = true;
+        thrustParticle.Play();
+        yield return new WaitForSeconds(.5f);
+        thrustParticle.Stop();
+        launchParticle = false;
     }
 }
