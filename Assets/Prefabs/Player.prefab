@@ -9969,10 +9969,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f8e1da00a3355b44ab9214c63e49264, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerDefenses
-  shieldRegenTime: 6
+  shieldRegenTime: 4
   bubbleGameObject: {fileID: 4589360078272909763, guid: d81cd0b0a8c19924da72b6c5ce848c2e, type: 3}
   dashForce: 20
-  dashRegenTime: 3
+  dashRegenTime: 2
   blasterOffset: {x: 0.515, y: 0.75}
   blasterTime: 2
   blasterGameObject: {fileID: 3845604647769928855, guid: 282f6f026aafb1c4e9306968fa6620dc, type: 3}
